@@ -22,13 +22,13 @@
         <tbody>
             @foreach($consultas as $consulta)
             <tr>
-                <td><a href="{{ route('detalle.consulta', ['id' => $consulta->id]) }}">{{ $consulta->empleado }}</a></td>
+                <td><a href="#">{{ $consulta->empleado }}</a></td>
                 <td>{{ $consulta->id }}</td>
                 <td>{{ $consulta->descripcion }}</td>
                 <td>{{ $consulta->medico }}</td>
                 <td>{{ $consulta->diagnostico }}</td>
-                <td>{{ $consulta->fecha_consulta->format('d/m/Y') }}</td>
-                <td>{{ $consulta->fecha_revision->format('d/m/Y') }}</td>
+                <td>{{ $consulta->fecha_consulta}}</td>
+                <td>{{ $consulta->fecha_revision}}</td>
                 <td class="{{ $consulta->estado == 'Realizado' ? 'text-success' : 'text-danger' }}">{{ $consulta->estado }}</td>
             </tr>
             @endforeach

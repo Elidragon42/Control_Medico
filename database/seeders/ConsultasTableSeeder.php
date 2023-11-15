@@ -19,7 +19,7 @@ class ConsultasTableSeeder extends Seeder
 
         foreach (range(1, 10) as $index) {
             DB::table('consultas')->insert([
-                'empleado' => $faker->name,
+                'empleado' => $faker->randomNumber,
                 'descripcion' => $faker->sentence,
                 'medico' => $faker->name,
                 'diagnostico' => $faker->text,
