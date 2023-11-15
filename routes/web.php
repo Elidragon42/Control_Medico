@@ -15,9 +15,7 @@ use App\Http\Controllers\ConsultaController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::redirect('/', '/consultas'); // Redirige "/" a "/consultas"
 
 Route::get('/dashboard', function () {
     return view('dashboard');

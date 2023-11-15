@@ -11,7 +11,7 @@ return new class extends Migration
     {
         Schema::create('consultas', function (Blueprint $table) {
             $table->id();
-            $table->integer('No.Empleado');
+            $table->integer('NoEmpleado');
             $table->string('descripcion');
             $table->string('medico');
             $table->string('diagnostico');
