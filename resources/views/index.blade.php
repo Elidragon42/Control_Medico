@@ -8,28 +8,28 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Empleados</th>
-                <th>ID</th>
-                <th>Descripción</th>
-                <th>Médico</th>
-                <th>Diagnóstico</th>
-                <th>Fecha de Consulta</th>
-                <th>Fecha de Revisión</th>
-                <th>Estado</th>
+                <th class="border border-gray-400 px-4 py-4" >Empleados</th>
+                <th class="border border-gray-400 px-4 py-4" >ID</th>
+                <th class="border border-gray-400 px-4 py-4" >Descripción</th>
+                <th class="border border-gray-400 px-4 py-4" >Médico</th>
+                <th class="border border-gray-400 px-4 py-4" >Diagnóstico</th>
+                <th class="border border-gray-400 px-4 py-4" >Fecha de Consulta</th>
+                <th class="border border-gray-400 px-4 py-4" >Fecha de Revisión</th>
+                <th class="border border-gray-400 px-4 py-4" >Estado</th>
             </tr>
         </thead>
 
         <tbody>
             @foreach($consultas as $consulta)
             <tr>
-                <td><a href="#">{{ $consulta->empleado }}</a></td>
-                <td>{{ $consulta->id }}</td>
-                <td>{{ $consulta->descripcion }}</td>
-                <td>{{ $consulta->medico }}</td>
-                <td>{{ $consulta->diagnostico }}</td>
-                <td>{{ $consulta->fecha_consulta}}</td>
-                <td>{{ $consulta->fecha_revision}}</td>
-                <td class="{{ $consulta->estado == 'Realizado' ? 'text-success' : 'text-danger' }}">{{ $consulta->estado }}</td>
+                <td class="border border-gray-400 px-4 py-4"><a href="#">{{ $consulta->empleado }}</a></td>
+                <td class="border border-gray-400 px-4 py-4">{{ $consulta->id }}</td>
+                <td class="border border-gray-400 px-4 py-4">{{ $consulta->descripcion }}</td>
+                <td class="border border-gray-400 px-4 py-4">{{ $consulta->medico }}</td>
+                <td class="border border-gray-400 px-4 py-4">{{ $consulta->diagnostico }}</td>
+                <td class="border border-gray-400 px-4 py-4">{{ $consulta->fecha_consulta}}</td>
+                <td class="border border-gray-400 px-4 py-4">{{ $consulta->fecha_revision}}</td>
+                <td class="border border-gray-400 px-4 py-4" {{ $consulta->estado == 'Realizado' ? 'text-success' : 'text-danger' }}">{{ $consulta->estado }}</td>
             </tr>
             @endforeach
         </tbody>

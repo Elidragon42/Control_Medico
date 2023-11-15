@@ -15,7 +15,10 @@ use App\Http\Controllers\ConsultaController;
 |
 */
 
-Route::redirect('/', '/consultas'); // Redirige "/" a "/consultas"
+
+Route::get('/', function () {
+    return view('index');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -25,9 +28,6 @@ Route::get('/procedimientos', function () {
     return view('procedimientos');
 });
 
-Route::get('/index', function () {
-    return view('index');
-});
 
 Route::get('/Empleados', function () {
     return view('Empleados');
