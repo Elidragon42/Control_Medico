@@ -34,6 +34,7 @@ Route::get('/Empleados', function () {
 });
 
 Route::get('/consultas', [ConsultaController::class, 'index'])->name('consultas.index');
+Route::get('/index', [ConsultaController::class, 'index'])->name('consultas.index');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

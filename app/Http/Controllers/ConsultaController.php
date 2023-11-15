@@ -12,4 +12,5 @@ class ConsultaController extends Controller
         $consultas = Consulta::all();
         return view('index', compact('consultas'));
     }
+    
 }
