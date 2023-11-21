@@ -16,9 +16,7 @@ use App\Http\Controllers\ConsultaController;
 */
 
 
-Route::get('/', function () {
-    return view('index');
-});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

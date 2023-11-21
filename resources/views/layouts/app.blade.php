@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    @yield('css')
     @vite('resources/css/app.css')
 </head>
 <body class="h-full">
@@ -116,7 +117,9 @@
 
     <header class="bg-white shadow">
       <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold tracking-tight text-gray-900">@yield('subtitle')</h1>
+        <h1 class="inline pr-24 text-3xl font-bold tracking-tight text-gray-900">@yield('subtitle')</h1>
+        @yield('boton1')
+        @yield('boton2')
       </div>
     </header>
 
