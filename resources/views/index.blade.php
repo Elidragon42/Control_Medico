@@ -9,7 +9,7 @@
 @section('subtitle', 'index')
 
 @section('boton1')
-    <a href="#" class="text-xl font-bold tracking-tight text-gray-900 hover:underline">Nuevo registro</a>
+    <a href="{{route('historial.create')}}" class="text-xl font-bold tracking-tight text-gray-900 hover:underline">Nuevo registro</a>
 @endsection
 
 

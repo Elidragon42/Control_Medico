@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HistorialController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConsultaController;
@@ -33,6 +34,8 @@ Route::get('/Empleados', function () {
 
 Route::get('/consultas', [ConsultaController::class, 'index'])->name('consultas.index');
 Route::get('/index', [ConsultaController::class, 'index'])->name('consultas.index');
+
+Route::get('/historial/create', [HistorialController::class, 'create'])->name('historial.create');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
