@@ -1,24 +1,27 @@
-thead{
-    border-width: 3px;
-    color: #000;
-    border: solid;
+.table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
-tr{
-    border: 3px #000 solid;
-    
+
+tr {
+    border-bottom: 1px solid #ddd; 
 }
 
-th{
-    border: 3px #000 solid;
+
+th, td {
+    border: none;
+    padding: 8px; 
+    text-align: left; 
 }
 
-td{
-    border: 3px #000 solid;
+
+tr:nth-child(odd) {
+    background-color: #f9f9f9; 
 }
 
-.table{
-    border: 3px #000 solid;
-    
-    
+
+th {
+    background-color: rgb(242, 236, 236);
+    color: #121212; 
 }
