@@ -12,7 +12,6 @@
     <a href="{{route('historial.create')}}" class="text-xl font-bold tracking-tight text-gray-900 hover:underline">Nuevo registro</a>
 @endsection
 
-
 @section('content')
     <table class="table">
         <thead>
@@ -29,18 +28,24 @@
         </thead>
 
         <tbody>
-            @foreach($consultas as $consulta)
-            <tr>
-                <td class="">{{ $consulta->id }}</td>
-                <td class=""><a href="#" class="hover:underline">{{ $consulta->empleado }}</a></td>
-                <td class="">{{ $consulta->descripcion }}</td>
-                <td class="">{{ $consulta->medico }}</td>
-                <td class="">{{ $consulta->diagnostico }}</td>
-                <td class="">{{ $consulta->fecha_consulta}}</td>
-                <td class="">{{ $consulta->fecha_revision}}</td>
-                <td class="" {{ $consulta->estado == 'Realizado' ? 'text-success' : 'text-danger' }}">{{ $consulta->estado }}</td>
-            </tr>
-            @endforeach
+            @if($consultas->isEmpty())
+                <tr>
+                    <td colspan="8" style="text-align: center; background-color: #f2ecec; color: red;">No información :v</td>
+                </tr>
+            @else
+                @foreach($consultas as $consulta)
+                    <tr>
+                        <td class="">{{ $consulta->id }}</td>
+                        <td class=""><a href="#" class="hover:underline">{{ $consulta->empleado }}</a></td>
+                        <td class="">{{ $consulta->descripcion }}</td>
+                        <td class="">{{ $consulta->medico }}</td>
+                        <td class="">{{ $consulta->diagnostico }}</td>
+                        <td class="">{{ $consulta->fecha_consulta}}</td>
+                        <td class="">{{ $consulta->fecha_revision}}</td>
+                        <td class="" {{ $consulta->estado == 'Realizado' ? 'text-success' : 'text-danger' }}">{{ $consulta->estado }}</td>
+                    </tr>
+                @endforeach
+            @endif
         </tbody>
     </table>
 @endsection
