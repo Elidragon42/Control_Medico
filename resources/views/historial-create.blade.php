@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/estilos-historial-create.css')}}">    
+    <link rel="stylesheet" href="{{ asset('css/estilos-historial-create.css') }}">
 @endsection
 
 @section('subtitle', 'crear nuevo')
@@ -19,13 +19,21 @@
             <h1>Nuevo registro medico</h1>
         </div>
         <div>
+            <form action="">
+                <div class="">
+                    <div>
+                        <label for="nEmpleado">No. empleado</label>
+                        <select name="" id="">
+                            
+                        </select>
+                    </div>
+                    <div>
+                        <label for="otra">no se</label>
+                        <input type="search" name="otra" id="">
+                    </div>
+                </div>
+            </form>
+        </div>
 
-        </div>
-        <div>
-
-        </div>
-        <div>
-            
-        </div>
     </div>
 @endsection
