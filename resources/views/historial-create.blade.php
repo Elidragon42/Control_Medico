@@ -14,9 +14,9 @@
 
 
 @section('content')
-    <div>
-        <div>
-            <h1>Nuevo registro medico</h1>
+    <div class="text-center">
+        <div class="mb-10 pb-2 pt-2 border-b-2">
+            <h1 class="text-2xl font-bold tracking-wider">Nuevo registro medico</h1>
         </div>
         <div>
             <form action="">
@@ -24,7 +24,9 @@
                     <div>
                         <label for="nEmpleado">No. empleado</label>
                         <select name="" id="">
-                            
+                            @foreach ($empleados as $empleado)
+                                <option value="{{$empleado->numero_de_empleado}}">{{$empleado->numero_de_empleado}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div>

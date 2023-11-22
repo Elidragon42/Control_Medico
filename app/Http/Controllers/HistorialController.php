@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+
 
 class HistorialController extends Controller
 {
@@ -20,7 +22,8 @@ class HistorialController extends Controller
     public function create()
     {
         //
-        return view('historial-create');
+        $empleados = User::all();
+        return view('historial-create', compact('empleados'));
     }
 
     /**
@@ -29,6 +32,7 @@ class HistorialController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
