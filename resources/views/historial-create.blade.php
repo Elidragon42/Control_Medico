@@ -14,5 +14,18 @@
 
 
 @section('content')
-    
+    <div>
+        <div>
+            <h1>Nuevo registro medico</h1>
+        </div>
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+        <div>
+            
+        </div>
+    </div>
 @endsection

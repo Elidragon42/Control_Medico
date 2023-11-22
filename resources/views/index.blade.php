@@ -17,8 +17,8 @@
     <table class="table">
         <thead>
             <tr>
-                <th class="" >Empleados</th>
                 <th class="" >ID</th>
+                <th class="" >No.Empleado</th>
                 <th class="" >Descripción</th>
                 <th class="" >Médico</th>
                 <th class="" >Diagnóstico</th>
@@ -31,8 +31,8 @@
         <tbody>
             @foreach($consultas as $consulta)
             <tr>
-                <td class=""><a href="#">{{ $consulta->empleado }}</a></td>
                 <td class="">{{ $consulta->id }}</td>
+                <td class=""><a href="#" class="hover:underline">{{ $consulta->empleado }}</a></td>
                 <td class="">{{ $consulta->descripcion }}</td>
                 <td class="">{{ $consulta->medico }}</td>
                 <td class="">{{ $consulta->diagnostico }}</td>
