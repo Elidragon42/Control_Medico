@@ -13,6 +13,17 @@
 @endsection
 
 @section('content')
+
+<form action="{{ route('consultas.index') }}" method="GET">
+    <label for="filtro">Filtrar por:</label>
+    <select name="filtro" id="filtro">
+        <option value="todos">Todos</option>
+        <option value="realizado">Realizado</option>
+        <option value="pendiente">Pendiente</option>
+    </select>
+
+    <button type="submit">Filtrar</button>
+</form>
     <table class="table">
         <thead>
             <tr>

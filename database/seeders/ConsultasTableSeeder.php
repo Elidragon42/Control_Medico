@@ -17,9 +17,9 @@ class ConsultasTableSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        foreach (range(1, 10) as $index) {
+        foreach (range(1, 100) as $index) {
             DB::table('consultas')->insert([
-                'empleado' => $faker->randomNumber,
+                'numero_de_empleado' => $faker->unique()->randomNumber(8, true),
                 'descripcion' => $faker->sentence,
                 'medico' => $faker->name,
                 'diagnostico' => $faker->text,

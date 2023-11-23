@@ -2,15 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Consulta;
 use Illuminate\Http\Request;
+use App\Models\Consulta;
 
 class ConsultaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $consultas = Consulta::all();
+        $filtro = $request->input('filtro', 'todos');
+
+        $query = Consulta::query();
+
+        if ($filtro === 'realizado') {
+            $query->where('estado', 'Realizado');
+        } elseif ($filtro === 'pendiente') {
+            $query->where('estado', 'Pendiente');
+        }
+
+        $consultas = $query->get();
+
         return view('index', compact('consultas'));
     }
-    
+
 }
