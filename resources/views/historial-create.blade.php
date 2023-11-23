@@ -23,11 +23,23 @@
                 <div class="">
                     <div>
                         <label for="nEmpleado">No. empleado</label>
-                        <select name="" id="">
-                            @foreach ($empleados as $empleado)
-                                <option value="{{$empleado->numero_de_empleado}}">{{$empleado->numero_de_empleado}}</option>
-                            @endforeach
-                        </select>
+                        <div class="wrapper">
+                            <div class="select-btn">
+                                <span>Empleado</span>
+                                <i class="fa-solid fa-chevron-down" style="color: #000000;"></i>
+                            </div>
+                            <div class="content">
+                                <div class="search">
+                                    <i class="fa-solid fa-magnifying-glass" style="color: #999;"></i>
+                                    <input type="text" placeholder="Buscar" name="" id="inputSearch">
+                                </div>
+                                <ul class="options">
+                                    @foreach ($empleados as $empleado)
+                                        <li onclick="updateName(this)" id="data-container" data-empleados="{{json_encode($empleados)}}">{{$empleado->numero_de_empleado}}-{{$empleado->name}}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <label for="otra">no se</label>
@@ -38,4 +50,8 @@
         </div>
 
     </div>
+@endsection
+
+@section('script')
+    <script src="{{asset('js/Chosen.js')}}"></script>
 @endsection

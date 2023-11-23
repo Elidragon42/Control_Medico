@@ -133,5 +133,7 @@
 
 
   <script src="{{asset('js/DropDownHeader.js')}}"></script>
+  <script src="https://kit.fontawesome.com/342c8d4321.js" crossorigin="anonymous"></script>
+  @yield('script')
 </body>
 </html>
