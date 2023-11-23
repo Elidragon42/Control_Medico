@@ -22,6 +22,7 @@
         <option value="pendiente">Pendiente</option>
     </select>
 
+
     <button type="submit">Filtrar</button>
 </form>
     <table class="table">
@@ -59,4 +60,6 @@
             @endif
         </tbody>
     </table>
+    {{ $consultas->links()}}
+
 @endsection
