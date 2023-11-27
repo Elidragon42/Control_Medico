@@ -1,6 +1,6 @@
 .wrapper{
     width: 290px;
-    
+    margin-top: 1.5em;
 }
 
 .select-btn, .options li{
@@ -14,12 +14,18 @@
     background: #fff;
     padding: 0 20px;
     border-radius: 5px;
+    border-width: 1px;
+    border-color: #000;
     background: #fff;
     font-size: large;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.select-btn:hover{
+background: #f1f1f1;
 }
 
 .select-btn i{
@@ -89,3 +95,5 @@
 .options li:hover{
     background: #f2f2f2;
 }
+
+

@@ -20,10 +20,10 @@
         </div>
         <div>
             <form action="">
-                <div class="">
-                    <div>
-                        <label for="nEmpleado">No. empleado</label>
-                        <div class="wrapper">
+                <div class="grid grid-cols-4">
+                    <div class="row-span-2">
+                        <div class="wrapper ">
+                            <input type="hidden" name="numero_de_empleado">
                             <div class="select-btn">
                                 <span>Empleado</span>
                                 <i class="fa-solid fa-chevron-down" style="color: #000000;"></i>
@@ -40,10 +40,31 @@
                                 </ul>
                             </div>
                         </div>
+                        <input type="hidden" name="empleadoSeleccionado" id="empleadoSeleccionado">
+                    </div>
+                    <div class="col-span-3">
+                        <label for="">Descripcion</label>
+                        <textarea class="w-full resize-none overflow-auto" name="" id="" rows="5"></textarea>
+                    </div>
+                    <div class="col-start-2 col-span-3 mt-3">
+                        <label for="">Diagnostico</label>
+                        <textarea class="w-full resize-none overflow-auto" name="" id="" rows="5"></textarea>
                     </div>
                     <div>
-                        <label for="otra">no se</label>
-                        <input type="search" name="otra" id="">
+                        <label for="">estado</label>
+                        <select name="" id="">
+                            
+                            <option value="">pendiente</option>
+                            <option value="">realizado</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="">Fecha de consulta</label>
+                        <input type="date" name="" id="">
+                    </div>
+                    <div>
+                        <label for="">fecha de revision</label>
+                        <input type="date" name="" id="">
                     </div>
                 </div>
             </form>

@@ -1,7 +1,8 @@
 const wrapper = document.querySelector(".wrapper"),
 selectBtn = wrapper.querySelector(".select-btn"),
 searchInp = wrapper.querySelector("#inputSearch"),
-options = wrapper.querySelector(".options");
+options = wrapper.querySelector(".options"),
+empleadoSeleccionadoInput = document.getElementById('empleadoSeleccionado');
 
 let dataContainer = document.getElementById('data-container');
 let empleados = JSON.parse(dataContainer.getAttribute('data-empleados'));
@@ -9,7 +10,9 @@ let empleados = JSON.parse(dataContainer.getAttribute('data-empleados'));
 
 function updateName(selectedLi){
     wrapper.classList.remove("active");
-    selectBtn.firstElementChild.innerText = selectedLi.innerText
+    selectBtn.firstElementChild.innerText = selectedLi.innerText;
+
+    empleadoSeleccionadoInput.value = selectedLi.innerText;
 }
 
 searchInp.addEventListener("keyup", () =>{
