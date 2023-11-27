@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Consulta;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -11,9 +12,21 @@ class HistorialController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $filtro = $request->input('filtro', 'todos');
+
+        $query = Consulta::query();
+
+        if ($filtro === 'realizado') {
+            $query->where('estado', 'Realizado');
+        } elseif ($filtro === 'pendiente') {
+            $query->where('estado', 'Pendiente');
+        }
+
+        $consultas = $query->orderBy('id', 'desc')->paginate(10);
+
+        return view('index', compact('consultas'));
     }
 
     /**
