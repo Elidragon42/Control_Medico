@@ -20,6 +20,8 @@
         <option value="todos">Todos</option>
         <option value="realizado">Realizado</option>
         <option value="pendiente">Pendiente</option>
+        <option value="mayor_fecha">Mayor fecha</option>
+        <option value="menor_fecha">Menor fecha</option>
     </select>
 </form>
 
@@ -68,6 +70,7 @@
             $('#filtroForm').submit();
         });
     });
+    
 </script>
 
 @endsection
