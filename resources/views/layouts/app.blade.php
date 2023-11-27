@@ -21,7 +21,7 @@
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="index" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
+                <a href="index" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">tabla</a>
                 <a href="procedimientos" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Procedimientos</a>
                 <a href="Empleados" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Empleados</a>
 
@@ -42,8 +42,8 @@
                 <div>
                   <button type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="absolute -inset-1.5"></span>
-                    <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                    <span class="sr-only">Abrir menu de Usuario</span>
+                    <img class="h-8 w-8 rounded-full" src="https://th.bing.com/th/id/R.960b9eb59636d35d2bfe9e6d6fdf0fa2?rik=kautLXVANwKXlw&pid=ImgRaw&r=0" alt="">
                   </button>
                 </div>
   
@@ -58,9 +58,9 @@
                     To: "transform opacity-0 scale-95"
                 -->
                 <div id="dropdownMenu" class="absolute overflow-hidden hidden right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white  shadow-lg ring-1 ring-black ring-opacity-5 border-2 border-white focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white" role="menuitem" tabindex="-1" id="user-menu-item-0">Perfil</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white" role="menuitem" tabindex="-1" id="user-menu-item-1">Configuracion</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white" role="menuitem" tabindex="-1" id="user-menu-item-2">Cerrar sesion</a>
                 </div>
               </div>
             </div>
@@ -82,7 +82,7 @@
   
       <div class="md:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-          <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
+          <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Tabla</a>
           <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
           <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
           <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
@@ -91,7 +91,7 @@
         <div class="border-t border-gray-700 pb-3 pt-4">
           <div class="flex items-center px-5">
             <div class="flex-shrink-0">
-              <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+              <img class="h-10 w-10 rounded-full" src="https://th.bing.com/th/id/R.960b9eb59636d35d2bfe9e6d6fdf0fa2?rik=kautLXVANwKXlw&pid=ImgRaw&r=0" alt="">
             </div>
             <div class="ml-3">
               <div class="text-base font-medium leading-none text-white">Tom Cook</div>
@@ -106,9 +106,9 @@
             </button>
           </div>
           <div class="mt-3 space-y-1 px-2">
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Your Profile</a>
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Settings</a>
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Sign out</a>
+            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Mi perfil</a>
+            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">configuraciones</a>
+            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">cerrar sesion</a>
           </div>
         </div>
       </div>

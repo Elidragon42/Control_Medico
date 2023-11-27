@@ -17,11 +17,14 @@ class ConsultaController extends Controller
             $query->where('estado', 'Realizado');
         } elseif ($filtro === 'pendiente') {
             $query->where('estado', 'Pendiente');
+        } elseif ($filtro === 'mayor_fecha') {
+            $query->orderBy('fecha_consulta', 'desc');
+        } elseif ($filtro === 'menor_fecha') {
+            $query->orderBy('fecha_consulta', 'asc');
         }
-
+        
         $consultas = $query->paginate(10);
 
         return view('index', compact('consultas'));
     }
-
 }
