@@ -32,8 +32,8 @@ Route::get('/Empleados', function () {
     return view('Empleados');
 });
 
-Route::get('/consultas', [ConsultaController::class, 'index'])->name('consultas.index');
-Route::get('/index', [ConsultaController::class, 'index'])->name('consultas.index');
+Route::get('/consultas', [HistorialController::class, 'index'])->name('consultas.index');
+Route::get('/index', [HistorialController::class, 'index'])->name('consultas.index');
 
 Route::get('/historial/create', [HistorialController::class, 'create'])->name('historial.create');
 
