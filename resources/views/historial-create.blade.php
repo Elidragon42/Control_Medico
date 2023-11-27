@@ -40,7 +40,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <input type="hidden" name="empleadoSeleccionado" id="empleadoSeleccionado">
+                        <input type="hidden" value="" name="empleadoSeleccionado" id="empleadoSeleccionado">
                     </div>
                     <div class="col-span-3">
                         <label for="">Descripcion</label>

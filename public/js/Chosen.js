@@ -7,12 +7,24 @@ empleadoSeleccionadoInput = document.getElementById('empleadoSeleccionado');
 let dataContainer = document.getElementById('data-container');
 let empleados = JSON.parse(dataContainer.getAttribute('data-empleados'));
 
+document.addEventListener("click", function(e) {
+    // Verificar si el clic fue dentro del wrapper o en el selectBtn
+    if (!wrapper.contains(e.target) && e.target !== selectBtn) {
+        wrapper.classList.remove("active");
+    }
+});
+
+selectBtn.addEventListener("click", ()=>{
+    wrapper.classList.toggle("active");
+});
+
 
 function updateName(selectedLi){
     wrapper.classList.remove("active");
     selectBtn.firstElementChild.innerText = selectedLi.innerText;
 
-    empleadoSeleccionadoInput.value = selectedLi.innerText;
+    let empleadoNumero = selectedLi.innerText.split("-")[0].trim();
+    empleadoSeleccionadoInput.value = empleadoNumero;
 }
 
 searchInp.addEventListener("keyup", () =>{
@@ -30,7 +42,5 @@ searchInp.addEventListener("keyup", () =>{
 
 
 
-selectBtn.addEventListener("click", ()=>{
-    wrapper.classList.toggle("active");
-});
+
 
