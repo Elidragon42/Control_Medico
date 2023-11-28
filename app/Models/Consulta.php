@@ -9,7 +9,15 @@ class Consulta extends Model
 {
     use HasFactory;
 
-
+    protected $fillable = [
+        'numero_de_empleado', 
+            'descripcion' ,
+            'medico',
+            'diagnostico',
+            'estado',
+            'fecha_consulta',
+            'fecha_revision'
+    ];
 
     public function user()
     {

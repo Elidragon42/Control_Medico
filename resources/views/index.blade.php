@@ -48,7 +48,7 @@
             @foreach($consultas as $consulta)
                 <tr>
                     <td class="">{{ $consulta->id }}</td>
-                    <td class=""><a href="#" class="hover:underline">{{ $consulta->empleado }}</a></td>
+                    <td class=""><a href="#" class="hover:underline">{{ $consulta->numero_de_empleado }}</a></td>
                     <td class="">{{ $consulta->descripcion }}</td>
                     <td class="">{{ $consulta->medico }}</td>
                     <td class="">{{ $consulta->diagnostico }}</td>

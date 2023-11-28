@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Consulta;
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 
@@ -42,10 +43,21 @@ class HistorialController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         //
+        $request->validate([
+            'numero_de_empleado' => 'required',
+            'descripcion' => 'required',
+            'diagnostico' => 'required',
+            'medico' => 'required',
+            'estado' => 'required',
+            'fecha_consulta' => 'required',
+            'fecha_revision' => 'required'
+        ]);
 
+        Consulta::create($request->all());
+        return redirect()->route('consultas.index'); 
     }
 
     /**

@@ -19,7 +19,9 @@
             <h1 class="text-2xl font-bold tracking-wider">Nuevo registro medico</h1>
         </div>
         <div>
-            <form action="">
+            <form action="{{route('historial.store')}}" method="POST">
+                @csrf
+                <input type="hidden" name="medico" value="pancho">
                 <div class="grid grid-cols-4">
                     <div class="row-span-2">
                         <div class="wrapper ">
@@ -40,31 +42,33 @@
                                 </ul>
                             </div>
                         </div>
-                        <input type="hidden" value="" name="empleadoSeleccionado" id="empleadoSeleccionado">
+                        <input type="hidden" value="" name="numero_de_empleado" id="empleadoSeleccionado">
                     </div>
                     <div class="col-span-3">
                         <label for="">Descripcion</label>
-                        <textarea class="w-full resize-none overflow-auto" name="" id="" rows="5"></textarea>
+                        <textarea class="w-full resize-none overflow-auto" name="descripcion" id="descripcion" rows="5"></textarea>
                     </div>
                     <div class="col-start-2 col-span-3 mt-3">
                         <label for="">Diagnostico</label>
-                        <textarea class="w-full resize-none overflow-auto" name="" id="" rows="5"></textarea>
+                        <textarea class="w-full resize-none overflow-auto" name="diagnostico" id="diagnostico" rows="5"></textarea>
                     </div>
                     <div>
-                        <label for="">estado</label>
-                        <select name="" id="">
-                            
-                            <option value="">pendiente</option>
-                            <option value="">realizado</option>
+                        <label for="estado">estado</label>
+                        <select name="estado" id="estado" >
+                            <option value="pendiente">pendiente</option>
+                            <option value="realizado">realizado</option>
                         </select>
                     </div>
                     <div>
-                        <label for="">Fecha de consulta</label>
-                        <input type="date" name="" id="">
+                        <label for="fechaConsulta">Fecha de consulta</label>
+                        <input type="date" name="fecha_consulta" id="">
                     </div>
                     <div>
-                        <label for="">fecha de revision</label>
-                        <input type="date" name="" id="">
+                        <label for="fechaRevision">fecha de revision</label>
+                        <input type="date" name="fecha_revision" id="">
+                    </div>
+                    <div>
+                        <input type="submit" value="Crear">
                     </div>
                 </div>
             </form>
