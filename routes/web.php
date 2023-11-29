@@ -5,23 +5,11 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConsultaController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::get('/procedimientos', function () {
     return view('procedimientos');
@@ -35,8 +23,10 @@ Route::get('/Empleados', function () {
 
 Route::get('/index', [HistorialController::class, 'index'])->name('consultas.index');
 Route::post('/historial/store', [HistorialController::class, 'store'])->name('historial.store');
-
 Route::get('/historial/create', [HistorialController::class, 'create'])->name('historial.create');
+Route::get('/historial/{id}', [HistorialController::class, 'show'])->name('historial.show');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

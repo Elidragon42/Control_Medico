@@ -66,6 +66,7 @@ class HistorialController extends Controller
     public function show(string $id)
     {
         //
+        view('historial-show');
     }
 
     /**
