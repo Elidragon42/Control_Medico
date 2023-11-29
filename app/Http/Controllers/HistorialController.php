@@ -66,7 +66,8 @@ class HistorialController extends Controller
     public function show(string $id)
     {
         //
-        view('historial-show');
+        $consulta = Consulta::with('user')->find($id);
+        return view('historial-show', compact('consulta'));
     }
 
     /**
