@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HistorialController;
+use App\Http\Controllers\ProcedimientosController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConsultaController;
@@ -11,9 +12,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::get('/procedimientos', function () {
-    return view('procedimientos');
-});
+Route::get('/procedimientos', [ProcedimientosController::class, 'index'])->name('procedimientos.index');
+Route::get('/procedimientos/create', [ProcedimientosController::class, 'create'])->name('procedimientos.create');
 
 
 Route::get('/Empleados', function () {
