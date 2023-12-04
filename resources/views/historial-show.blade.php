@@ -10,7 +10,7 @@
         <h1 class="text-xl font-semibold">Numero de empleado:</h1>
         <h1>{{ $consulta->numero_de_empleado }}</h1>
 
-        @if($consulta->user)
+        @if ($consulta->user)
             <h1 class="text-xl font-semibold">nombre:</h1>
             <h1>{{ $consulta->user->name }}</h1>
 
