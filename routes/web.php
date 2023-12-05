@@ -15,6 +15,10 @@ Route::get('/dashboard', function () {
 Route::get('/procedimientos', [ProcedimientosController::class, 'index'])->name('procedimientos.index');
 Route::get('/procedimientos/create', [ProcedimientosController::class, 'create'])->name('procedimientos.create');
 Route::post('/procedimientos/create/store', [ProcedimientosController::class, 'store'])->name('procedimientos.store');
+Route::get('/procedimientos/{id}', [ProcedimientosController::class, 'show'])->name('procedimientos.show');
+Route::get('/procedimientos/{id}/edit', [ProcedimientosController::class, 'edit'])->name('procedimientos.edit');
+
+
 
 Route::get('/Empleados', function () {
     return view('Empleados');
@@ -25,7 +29,7 @@ Route::get('/index', [HistorialController::class, 'index'])->name('consultas.ind
 Route::post('/historial/store', [HistorialController::class, 'store'])->name('historial.store');
 Route::get('/historial/create', [HistorialController::class, 'create'])->name('historial.create');
 Route::get('/historial/{id}', [HistorialController::class, 'show'])->name('historial.show');
-
+Route::get('/procedimientos/{id}/edit', [ProcedimientosController::class, 'edit'])->name('procedimientos.edit');
 
 
 Route::middleware('auth')->group(function () {

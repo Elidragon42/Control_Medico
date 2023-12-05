@@ -21,9 +21,8 @@
     <tbody>
         @forelse ($lista as $campo)
             <tr>
-                <th>{{$campo->id}}</th>
+                <th><a href="{{route('procedimientos.show', $campo->id)}}" class="hover:underline">{{$campo->id}}</a></th>
                 <th>{{$campo->procedimiento}} </th>
-                <th>{{$campo->descripcion}} </th>
             </tr>
         @empty
             <tr>

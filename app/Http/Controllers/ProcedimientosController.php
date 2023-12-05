@@ -30,4 +30,24 @@ class ProcedimientosController extends Controller
         Procedimiento::create($request->all());
         return redirect()->route('procedimientos.index');
     }
+
+    public function show(string $id)
+    {
+        $consulta = Procedimiento::find($id);
+
+        return view('procedimientos-show', compact('consulta'));
+    }
+
+    public function edit(string $id)
+    {
+        $consulta = Procedimiento::find($id);
+
+        return view('procedimientos-edit', compact('consulta'));
+
+    }
+
+    public function update(Request $request, string $id)
+    {
+
+    }
 }
