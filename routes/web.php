@@ -14,7 +14,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/procedimientos', [ProcedimientosController::class, 'index'])->name('procedimientos.index');
 Route::get('/procedimientos/create', [ProcedimientosController::class, 'create'])->name('procedimientos.create');
-
+Route::post('/procedimientos/create/store', [ProcedimientosController::class, 'store'])->name('procedimientos.store');
 
 Route::get('/Empleados', function () {
     return view('Empleados');
