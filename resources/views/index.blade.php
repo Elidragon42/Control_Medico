@@ -2,6 +2,7 @@
 
 @section('title', 'Home')
 
+
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/estilos-index.css') }}">
 @endsection
@@ -23,9 +24,7 @@
                 <option value="pendiente">Pendiente</option>
             </select>
         </form>
-        <div>
-            input
-        </div>
+
     </div>
 
     <table class="table">
