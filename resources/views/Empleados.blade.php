@@ -6,5 +6,5 @@
 
 @section('content')
     
-<h1> Todavia se deconoce para que servira</h1>
+<h1> ???</h1>
 @endsection
