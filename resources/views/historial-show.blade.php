@@ -4,6 +4,10 @@
 
 @section('subtitle', 'Ver registro')
 
+@section('boton1')
+    <a href="{{ route('procedimientos.create') }}" class="text-xl font-bold tracking-tight text-gray-900 hover:underline">Editar datos</a>
+@endsection
+
 @section('content')
     <div class="pb-5">
         <h1 class="text-2xl font-bold">Datos del paciente</h1>

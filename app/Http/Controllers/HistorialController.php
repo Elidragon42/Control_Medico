@@ -76,6 +76,9 @@ class HistorialController extends Controller
     public function edit(string $id)
     {
         //
+        $consulta = Consulta::find($id);
+
+        return view('historial-edit', compact('consulta'));
     }
 
     /**
@@ -92,5 +95,9 @@ class HistorialController extends Controller
     public function destroy(string $id)
     {
         //
+        $dato = Consulta::find($id);
+        $dato->delete();
+
+        return to_route('historial.index');
     }
 }

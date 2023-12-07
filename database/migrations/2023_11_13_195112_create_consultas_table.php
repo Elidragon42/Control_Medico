@@ -14,7 +14,7 @@ return new class extends Migration
             $table->bigInteger('numero_de_empleado');
             $table->string('descripcion');
             $table->string('medico');
-            $table->bigInteger('id_procedimiento');
+            //$table->bigInteger('id_procedimiento');
             $table->string('diagnostico');
             $table->date('fecha_consulta');
             $table->date('fecha_revision');

@@ -13,9 +13,9 @@
         <table class="min-w-full border border-gray-300">
             <thead>
                 <tr>
-                    <th class="py-2 px-4 border-b">Id</th>
-                    <th class="py-2 px-4 border-b">Procedimiento</th>
-                    <th class="py-2 px-4 border-b">Descripción</th>
+                    <th class="py-2 px-4 text-left border-b">Id</th>
+                    <th class="py-2 px-4 text-left border-b">Procedimiento</th>
+                    <th class="py-2 px-4 text-left border-b">Descripción</th>
                 </tr>
             </thead>
             <tbody>
