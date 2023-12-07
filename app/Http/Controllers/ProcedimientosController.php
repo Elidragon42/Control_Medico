@@ -46,8 +46,24 @@ class ProcedimientosController extends Controller
 
     }
 
-    public function update(Request $request, string $id)
-    {
 
+    public function update(Request $request, $id)
+    {
+        
+
+        $dato = Procedimiento::find($id);
+        $dato->update($request->all());
+
+        return redirect()->route('procedimientos.index')
+            ->with('success', 'Post updated successfully.');
+    }
+
+    public function destroy($id)
+    {
+        $dato = Procedimiento::find($id);
+        $dato->delete();
+        
+        return to_route('procedimientos.index');
+    
     }
 }
