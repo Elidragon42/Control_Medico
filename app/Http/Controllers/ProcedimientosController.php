@@ -54,7 +54,7 @@ class ProcedimientosController extends Controller
         $dato = Procedimiento::find($id);
         $dato->update($request->all());
 
-        return redirect()->route('procedimientos.index')
+        return to_route('procedimientos.index')
             ->with('success', 'Post updated successfully.');
     }
 

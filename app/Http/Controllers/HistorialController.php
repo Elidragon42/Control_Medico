@@ -77,8 +77,9 @@ class HistorialController extends Controller
     {
         //
         $consulta = Consulta::find($id);
+        $empleados = User::all();
 
-        return view('historial-edit', compact('consulta'));
+        return view('historial-edit', compact('consulta'), compact('empleados'));
     }
 
     /**
@@ -87,6 +88,10 @@ class HistorialController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $dato = Consulta::find($id);
+        $dato->update($request->all());
+
+        return to_route('consultas.index');
     }
 
     /**
@@ -98,6 +103,6 @@ class HistorialController extends Controller
         $dato = Consulta::find($id);
         $dato->delete();
 
-        return to_route('historial.index');
+        return to_route('consultas.index');
     }
 }

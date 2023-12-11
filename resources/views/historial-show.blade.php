@@ -5,12 +5,17 @@
 @section('subtitle', 'Ver registro')
 
 @section('boton1')
-    <a href="{{ route('procedimientos.create') }}" class="text-xl font-bold tracking-tight text-gray-900 hover:underline">Editar datos</a>
+    <a href="{{route('historial.edit', $consulta->id)}}" class="text-xl font-bold tracking-tight text-gray-900 hover:underline">Editar datos</a>
+    <form action="{{route('historial.destroy', $consulta)}}" method="post" class="inline pl-5">
+        @csrf
+        @method('delete')
+        <button type="submit" class="text-xl font-bold tracking-tight text-red-500 hover:underline">Eliminar</button>
+    </form>
 @endsection
 
 @section('content')
     <div class="pb-5">
-        <h1 class="text-2xl font-bold">Datos del paciente</h1>
+        <h1 class="text-2xl font-bold">Datos del empleado</h1>
         <h1 class="text-xl font-semibold">Numero de empleado:</h1>
         <h1>{{ $consulta->numero_de_empleado }}</h1>
 

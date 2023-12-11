@@ -31,7 +31,8 @@ Route::get('/index', [HistorialController::class, 'index'])->name('consultas.ind
 Route::post('/historial/store', [HistorialController::class, 'store'])->name('historial.store');
 Route::get('/historial/create', [HistorialController::class, 'create'])->name('historial.create');
 Route::get('/historial/{id}', [HistorialController::class, 'show'])->name('historial.show');
-Route::get('/historial/{id}/edit', [ProcedimientosController::class, 'edit'])->name('procedimientos.edit');
+Route::get('/historial/{id}/edit', [HistorialController::class, 'edit'])->name('historial.edit');
+Route::delete('/historial/{id}/delete', [HistorialController::class, 'destroy'])->name('historial.destroy');
 
 
 Route::middleware('auth')->group(function () {
