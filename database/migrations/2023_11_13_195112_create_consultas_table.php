@@ -12,10 +12,10 @@ return new class extends Migration
         Schema::create('consultas', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('numero_de_empleado');
-            $table->string('descripcion');
+            $table->text('descripcion');
             $table->string('medico');
             //$table->bigInteger('id_procedimiento');
-            $table->string('diagnostico');
+            $table->text('diagnostico');
             $table->date('fecha_consulta');
             $table->date('fecha_revision');
             $table->string('estado');

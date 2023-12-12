@@ -2,7 +2,9 @@
 
 @section('title', 'Editar')
 
-
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/estilos-historial-create.css') }}">
+@endsection
 
 @section('subtitle', 'Editar datos')
 
@@ -12,7 +14,7 @@
     <input type="hidden" name="medico" value="pancho">
     <div class="grid grid-cols-4">
         <div class="row-span-2">
-        
+           
             <input type="hidden" value="" name="numero_de_empleado" id="empleadoSeleccionado">
         </div>
         <div class="col-span-3">
@@ -45,3 +47,6 @@
 </form>
 @endsection
 
+@section('script')
+    <script src="{{asset('js/Chosen.js')}}"></script>
+@endsection

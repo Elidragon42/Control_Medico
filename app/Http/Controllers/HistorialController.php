@@ -88,7 +88,7 @@ class HistorialController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        $dato = Consulta::find($id);
+        $dato = Consulta::with('user')->find($id);
         $dato->update($request->all());
 
         return to_route('consultas.index');
