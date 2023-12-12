@@ -5,6 +5,9 @@ use App\Http\Controllers\ProcedimientosController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConsultaController;
+use Illuminate\support\Facades\Mail;
+use App\Mail\PruebaMail;
+
 
 
 Route::get('/dashboard', function () {
@@ -43,3 +46,13 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('Prueba1', function(){
+
+
+    Mail::to('joabsito1724@gmail.com')
+        ->SEND(new PruebaMail);
+
+return"Mensaje enviado";
+
+})->name('Prueba1');

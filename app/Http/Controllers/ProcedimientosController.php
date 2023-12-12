@@ -7,12 +7,11 @@ use Illuminate\Http\Request;
 
 class ProcedimientosController extends Controller
 {
-    //
     public function index()
     {
-        $lista = Procedimiento::all();
+        $procedimientos = Procedimiento::paginate(10);
 
-        return view('procedimientos', compact('lista'));
+        return view('procedimientos', compact('procedimientos'));
     }
 
     public function create()
@@ -46,16 +45,13 @@ class ProcedimientosController extends Controller
 
     }
 
-
     public function update(Request $request, $id)
     {
-        
-
         $dato = Procedimiento::find($id);
         $dato->update($request->all());
 
-        return to_route('procedimientos.index')
-            ->with('success', 'Post updated successfully.');
+        return redirect()->route('procedimientos.index')
+            ->with('success', 'Procedimiento actualizado exitosamente.');
     }
 
     public function destroy($id)
@@ -63,7 +59,6 @@ class ProcedimientosController extends Controller
         $dato = Procedimiento::find($id);
         $dato->delete();
         
-        return to_route('procedimientos.index');
-    
+        return redirect()->route('procedimientos.index');
     }
 }
