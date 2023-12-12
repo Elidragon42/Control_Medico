@@ -14,7 +14,23 @@
 @endsection
 
 @section('content')
-    <h1>{{$consulta->id}}</h1>
-    <h1>{{$consulta->procedimiento}}</h1>
-    <h1>{{$consulta->descripcion}}</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+            <h1 class="text-2xl font-bold mb-4">Detalles del procedimiento</h1>
+            <table class="min-w-full border-collapse bg-white shadow-md rounded">
+                <tr class="border-b">
+                    <td class="py-2 px-4 text-xl font-semibold">ID:</td>
+                    <td class="py-2 px-4">{{ $consulta->id }}</td>
+                </tr>
+                <tr class="border-b">
+                    <td class="py-2 px-4 text-xl font-semibold">Procedimiento:</td>
+                    <td class="py-2 px-4">{{ $consulta->procedimiento }}</td>
+                </tr>
+                <tr class="border-b">
+                    <td class="py-2 px-4 text-xl font-semibold">Descripción:</td>
+                    <td class="py-2 px-4">{{ $consulta->descripcion }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 @endsection
