@@ -12,7 +12,7 @@
     <input type="hidden" name="medico" value="pancho">
     <div class="grid grid-cols-4">
         <div class="row-span-2">
-           
+        
             <input type="hidden" value="" name="numero_de_empleado" id="empleadoSeleccionado">
         </div>
         <div class="col-span-3">

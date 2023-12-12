@@ -14,62 +14,59 @@
 @endsection
 
 @section('content')
-    <div class="pb-5">
-        <h1 class="text-2xl font-bold">Datos del empleado</h1>
-        <h1 class="text-xl font-semibold">Numero de empleado:</h1>
-        <h1>{{ $consulta->numero_de_empleado }}</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+            <h1 class="text-2xl font-bold mb-4">Datos del empleado</h1>
+            <table class="min-w-full border-collapse bg-white shadow-md rounded">
+                @if ($consulta->user)
+                    <tr class="border-b">
+                        <td class="py-2 px-4 text-xl font-semibold">Nombre:</td>
+                        <td class="py-2 px-4">{{ $consulta->user->name }}</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2 px-4 text-xl font-semibold">Genero:</td>
+                        <td class="py-2 px-4">{{ $consulta->user->genero }}</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2 px-4 text-xl font-semibold">Fecha de nacimiento:</td>
+                        <td class="py-2 px-4">{{ $consulta->user->fecha_de_nacimiento }}</td>
+                    </tr>
+                @endif
+            </table>
+        </div>
 
-        @if ($consulta->user)
-            <h1 class="text-xl font-semibold">nombre:</h1>
-            <h1>{{ $consulta->user->name }}</h1>
-
-            <h1 class="text-xl font-semibold">genero:</h1>
-            <h1>{{ $consulta->user->genero }}</h1>
-
-            <h1 class="text-xl font-semibold">fecha de nacimiento:</h1>
-            <h1>{{ $consulta->user->fecha_de_nacimiento }}</h1>
-
-            <h1 class="text-xl font-semibold">Numero de seguro social:</h1>
-            <h1>{{ $consulta->user->imss }}</h1>
-
-            <h1 class="text-xl font-semibold">Tipo de sangre:</h1>
-            <h1>{{ $consulta->user->tipo_de_sangre }}</h1>
-
-            <h1 class="text-xl font-semibold">Alergias:</h1>
-            <h1>{{ $consulta->user->alergias }}</h1>
-
-            <h1 class="text-xl font-semibold">Telefono:</h1>
-            <h1>{{ $consulta->user->telefono }}</h1>
-
-            <h1 class="text-xl font-semibold">direccion:</h1>
-            <h1>{{ $consulta->user->direccion }}</h1>
-
-            <h1 class="text-xl font-semibold">email:</h1>
-            <h1>{{ $consulta->user->email }}</h1>
-        @endif
-    </div>
-
-    <div>
-        <h1 class="text-2xl font-bold">Datos generales</h1>
-        <h1 class="text-xl font-semibold">ID:</h1>
-        <h1>{{ $consulta->id }}</h1>
-
-        <h1 class="text-xl font-semibold">Descripcion:</h1>
-        <h1>{{ $consulta->descripcion }}</h1>
-
-        <h1 class="text-xl font-semibold">Medico: </h1>
-        <h1>{{ $consulta->medico }}</h1>
-
-        <h1 class="text-xl font-semibold">Diagnostico:</h1>
-        <h1>{{ $consulta->diagnostico }}</h1>
-
-        <h1 class="text-xl font-semibold">Fecha de consulta:</h1>
-        <h1>{{ $consulta->fecha_consulta }}</h1>
-
-        <h1 class="text-xl font-semibold">Fecha de revision:</h1>
-        <h1>{{ $consulta->fecha_revision }}</h1>
-
-        <h1 class="text-xl font-semibold">Estado:</h1>
-        <h1>{{ $consulta->estado }}</h1>
+        <div>
+            <h1 class="text-2xl font-bold mb-4">Datos generales</h1>
+            <table class="min-w-full border-collapse bg-white shadow-md rounded">
+                <tr class="border-b">
+                    <td class="py-2 px-4 text-xl font-semibold">ID:</td>
+                    <td class="py-2 px-4">{{ $consulta->id }}</td>
+                </tr>
+                <tr class="border-b">
+                    <td class="py-2 px-4 text-xl font-semibold">Descripcion:</td>
+                    <td class="py-2 px-4">{{ $consulta->descripcion }}</td>
+                </tr>
+                <tr class="border-b">
+                    <td class="py-2 px-4 text-xl font-semibold">Medico:</td>
+                    <td class="py-2 px-4">{{ $consulta->medico }}</td>
+                </tr>
+                <tr class="border-b">
+                    <td class="py-2 px-4 text-xl font-semibold">Diagnostico:</td>
+                    <td class="py-2 px-4">{{ $consulta->diagnostico }}</td>
+                </tr>
+                <tr class="border-b">
+                    <td class="py-2 px-4 text-xl font-semibold">Fecha de consulta:</td>
+                    <td class="py-2 px-4">{{ $consulta->fecha_consulta }}</td>
+                </tr>
+                <tr class="border-b">
+                    <td class="py-2 px-4 text-xl font-semibold">Fecha de revision:</td>
+                    <td class="py-2 px-4">{{ $consulta->fecha_revision }}</td>
+                </tr>
+                <tr class="border-b">
+                    <td class="py-2 px-4 text-xl font-semibold">Estado:</td>
+                    <td class="py-2 px-4">{{ $consulta->estado }}</td>
+                </tr>
+            </table>
+        </div>
     </div>
 @endsection
