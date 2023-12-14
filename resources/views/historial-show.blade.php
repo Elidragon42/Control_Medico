@@ -24,12 +24,40 @@
                         <td class="py-2 px-4">{{ $consulta->user->name }}</td>
                     </tr>
                     <tr class="border-b">
-                        <td class="py-2 px-4 text-xl font-semibold">Genero:</td>
+                        <td class="py-2 px-4 text-xl font-semibold">Numero de empleado:</td>
+                        <td class="py-2 px-4">{{ $consulta->numero_de_empleado }}</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2 px-4 text-xl font-semibold">genero:</td>
                         <td class="py-2 px-4">{{ $consulta->user->genero }}</td>
                     </tr>
                     <tr class="border-b">
                         <td class="py-2 px-4 text-xl font-semibold">Fecha de nacimiento:</td>
                         <td class="py-2 px-4">{{ $consulta->user->fecha_de_nacimiento }}</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2 px-4 text-xl font-semibold">Numero de seguro social:</td>
+                        <td class="py-2 px-4">{{ $consulta->user->imss }}</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2 px-4 text-xl font-semibold">Tipo de sangre:</td>
+                        <td class="py-2 px-4">{{ $consulta->user->tipo_de_sangre }}</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2 px-4 text-xl font-semibold">Alergias:</td>
+                        <td class="py-2 px-4">{{ $consulta->user->alergias }}</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2 px-4 text-xl font-semibold">Telefono:</td>
+                        <td class="py-2 px-4">{{ $consulta->user->telefono }}</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2 px-4 text-xl font-semibold">Direccion:</td>
+                        <td class="py-2 px-4">{{ $consulta->user->direccion }}</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2 px-4 text-xl font-semibold">email:</td>
+                        <td class="py-2 px-4">{{ $consulta->user->email }}</td>
                     </tr>
                 @endif
             </table>
