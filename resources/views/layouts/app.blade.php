@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
     @yield('css')
     @vite('resources/css/app.css')
+    <script src="https://kit.fontawesome.com/342c8d4321.js" crossorigin="anonymous"></script>
 </head>
 <body class="h-full">
 
@@ -43,7 +44,7 @@
                   <button type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">Abrir menu de Usuario</span>
-                    <img class="h-8 w-8 rounded-full" src="https://th.bing.com/th/id/R.960b9eb59636d35d2bfe9e6d6fdf0fa2?rik=kautLXVANwKXlw&pid=ImgRaw&r=0" alt="">
+                    <i class="fa-solid fa-user w-8 h-8 pt-4 rounded-full fa-xl" style="color: #ffffff;"></i>
                   </button>
                 </div>
   
@@ -60,7 +61,7 @@
                 <div id="dropdownMenu" class="absolute overflow-hidden hidden right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white  shadow-lg ring-1 ring-black ring-opacity-5 border-2 border-white focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white" role="menuitem" tabindex="-1" id="user-menu-item-0">Perfil</a>
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white" role="menuitem" tabindex="-1" id="user-menu-item-1">Configuracion</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white" role="menuitem" tabindex="-1" id="user-menu-item-2">Cerrar sesion</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white" role="menuitem" tabindex="-1" id="user-menu-item-2">Iniciar sesion</a>
                 </div>
               </div>
             </div>

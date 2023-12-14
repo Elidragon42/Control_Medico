@@ -69,4 +69,6 @@
             </table>
         </div>
     </div>
+
+    <h1>{{$consulta->procedimiento->descripcion}}</h1>
 @endsection

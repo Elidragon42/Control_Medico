@@ -19,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                @forelse ($lista as $campo)
+                @forelse ($procedimientos as $campo)
                     <tr>
                         <td class="py-2 px-4 border-b">
                             <a href="{{ route('procedimientos.show', $campo->id) }}" class="hover:underline">{{ $campo->id }}</a>

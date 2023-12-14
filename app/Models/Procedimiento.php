@@ -14,4 +14,9 @@ class Procedimiento extends Model
         'descripcion'
 
     ];
+
+    public function consultasp()
+    {
+        return $this->hasMany(Consulta::class, 'id_procedimiento' ,'id', );
+    }
 }

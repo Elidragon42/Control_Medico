@@ -23,4 +23,9 @@ class Consulta extends Model
     {
         return $this->belongsTo(User::class, 'numero_de_empleado', 'numero_de_empleado');
     }
+
+    public function procedimiento()
+    {
+        return $this->belongsTo(Procedimiento::class,'id_procedimiento', 'id');
+    }
 }
