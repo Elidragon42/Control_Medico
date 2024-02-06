@@ -2,7 +2,6 @@
 
 @section('title', 'Home')
 
-
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/estilos-index.css') }}">
 @endsection
@@ -19,9 +18,9 @@
         <form action="{{ route('consultas.index') }}" method="GET" class="form-filtro" id="filtroForm">
             <label for="filtro" class="filtro-label">Filtrar por:</label>
             <select name="filtro" id="filtro" onchange="document.getElementById('filtroForm').submit()">
-                <option value="todos">Todos</option>
-                <option value="realizado">Realizado</option>
-                <option value="pendiente">Pendiente</option>
+                <option value="todos" @if ($filtro == 'todos') selected @endif>Todos</option>
+                <option value="realizado" @if ($filtro == 'realizado') selected @endif>Realizado</option>
+                <option value="pendiente" @if ($filtro == 'pendiente') selected @endif>Pendiente</option>
             </select>
         </form>
 
@@ -50,7 +49,8 @@
             @else
                 @foreach ($consultas as $consulta)
                     <tr>
-                        <td class=""><a href="{{route('historial.show', $consulta->id)}}" class="hover:underline">{{ $consulta->id }}</a></td>
+                        <td class=""><a href="{{ route('historial.show', $consulta->id) }}"
+                                class="hover:underline">{{ $consulta->id }}</a></td>
                         <td class=""><a href="#" class="hover:underline">{{ $consulta->numero_de_empleado }}</a>
                         </td>
                         <td class="">{{ $consulta->descripcion }}</td>

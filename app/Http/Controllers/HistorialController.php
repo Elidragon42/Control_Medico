@@ -27,7 +27,7 @@ class HistorialController extends Controller
 
         $consultas = $query->orderBy('id', 'desc')->paginate(10);
 
-        return view('index', compact('consultas'));
+        return view('index', compact('consultas', 'filtro'));
     }
 
     /**

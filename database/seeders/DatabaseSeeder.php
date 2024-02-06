@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        //\App\Models\Consulta::factory(100)->create();
+        \App\Models\Consulta::factory(100)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
