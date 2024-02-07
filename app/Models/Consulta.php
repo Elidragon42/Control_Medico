@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Empleado;
 
 class Consulta extends Model
 {
@@ -19,9 +20,9 @@ class Consulta extends Model
             'fecha_revision'
     ];
 
-    public function user()
+    public function empleado()
     {
-        return $this->belongsTo(User::class, 'numero_de_empleado', 'numero_de_empleado');
+        return $this->belongsTo(Empleado::class, 'numero_de_empleado', 'numero_de_empleado');
     }
 
     public function procedimiento()

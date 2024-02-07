@@ -45,6 +45,9 @@
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">Abrir menu de Usuario</span>
                     <i class="fa-solid fa-user w-8 h-8 pt-4 rounded-full fa-xl" style="color: #ffffff;"></i>
+                   <!-- doctor <i class="fa-solid fa-user-doctor w-8 h-8 pt-4 rounded-full fa-xl" style="color: #fff"></i> -->
+                   <!-- Admin <i class="fa-solid fa-user-tie w-8 h-8 pt-4 rounded-full fa-xl" style="color: #fff"></i> -->
+                  
                   </button>
                 </div>
   

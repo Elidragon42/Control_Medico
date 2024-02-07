@@ -2,21 +2,16 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-   
+    use HasFactory;
 
-
-    public function consultas()
-    {
-        return $this->hasMany(Consulta::class, 'numero_de_empleado', 'numero_de_empleado');
-    }
-
-
+    protected $fillable = [
+        'name',
+        'numero_de_empleado'
+    ];
 }

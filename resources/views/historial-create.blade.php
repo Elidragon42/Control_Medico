@@ -24,7 +24,7 @@
                 <input type="hidden" name="medico" value="pancho">
                 <div class="grid grid-cols-4">
                     <div class="row-span-2">
-                        <div class="wrapper ">
+                        <div class="wrapper">
                             <input type="hidden" name="numero_de_empleado">
                             <div class="select-btn">
                                 <span>Empleado</span>

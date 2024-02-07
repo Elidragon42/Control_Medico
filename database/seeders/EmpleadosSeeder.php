@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class UsuariosSeeder extends Seeder
+class EmpleadosSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class UsuariosSeeder extends Seeder
     public function run(): void
     {
         //
-        DB::table('users')->insert([
+        DB::table('Empleados')->insert([
             'numero_de_empleado' => 7839048564,
             'name' => 'Juan de la cruz',
             'genero' => 1,
@@ -28,7 +28,7 @@ class UsuariosSeeder extends Seeder
 
         ]);
 
-        DB::table('users')->insert([
+        DB::table('empleados')->insert([
             'numero_de_empleado' => 1234567812,
             'name' => 'Juan humberto',
             'genero' => 1,
@@ -42,7 +42,7 @@ class UsuariosSeeder extends Seeder
 
         ]);
 
-        DB::table('users')->insert([
+        DB::table('empleados')->insert([
             'numero_de_empleado' => 7634567890,
             'name' => 'pabla',
             'genero' => 2,
@@ -56,7 +56,7 @@ class UsuariosSeeder extends Seeder
 
         ]);
 
-        DB::table('users')->insert([
+        DB::table('empleados')->insert([
             'numero_de_empleado' => 9745667890,
             'name' => 'elias jaimes',
             'genero' => 1,
@@ -70,7 +70,7 @@ class UsuariosSeeder extends Seeder
 
         ]);
 
-        DB::table('users')->insert([
+        DB::table('empleados')->insert([
             'numero_de_empleado' => 12342234590,
             'name' => 'irving garcia',
             'genero' => 1,
@@ -83,7 +83,7 @@ class UsuariosSeeder extends Seeder
             'email' => 'irving.garcia.mf@gmail.com',
 
         ]);
-        DB::table('users')->insert([
+        DB::table('empleados')->insert([
             'numero_de_empleado' => 89983234590,
             'name' => 'jorge vega',
             'genero' => 1,
@@ -97,7 +97,7 @@ class UsuariosSeeder extends Seeder
 
         ]);
 
-        DB::table('users')->insert([
+        DB::table('empleados')->insert([
             'numero_de_empleado' => 9987654321,
             'name' => 'gael garcia',
             'genero' => 1,
