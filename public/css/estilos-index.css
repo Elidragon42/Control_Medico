@@ -39,3 +39,10 @@ th {
     background-color: rgb(217, 246, 255);
     color: #121212;
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+

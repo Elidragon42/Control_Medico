@@ -26,6 +26,15 @@
 
     </div>
  
+    <dialog id="ModalSesion" class="rounded-md h-2/3 w-2/3">
+        <form action="" method="post">
+            <input type="number" class="appearance-none w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" style="-webkit-appearance: none;"  name="" id="">
+        </form>
+        <h2>Esto es de mientras nomas </h2>
+        <p>en lo que queda el inicio de sesion y descuro como mugre se quitan las flechitas del input</p>
+        <button onclick="window.ModalSesion.close();" class="bg-red-500">Cerrar</button>
+     </dialog>
+
     <table class="table">
         <thead>
             <tr>
