@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->bigInteger('numero_de_empleado')->unique();
-            $table->rememberToken();
             $table->timestamps();
         });
     }
