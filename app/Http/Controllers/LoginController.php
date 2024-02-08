@@ -26,6 +26,15 @@ class LoginController extends Controller
     }
 
     public function login( Request $request ){ 
+        //! Falta validar los datos
+
+        $credenciales = [
+            "numero_de_empleado",
+        ];
+
+        if(Auth::attempt([$credenciales])){
+            return to_route("procedimientos.index");
+        }
 
     }
 
