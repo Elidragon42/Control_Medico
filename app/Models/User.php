@@ -14,4 +14,9 @@ class User extends Authenticatable
         'name',
         'numero_de_empleado'
     ];
+
+    protected $hidden = [
+        'remember_token',
+    ];
+    
 }
