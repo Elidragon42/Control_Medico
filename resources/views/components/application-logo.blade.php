@@ -1,1 +1,1 @@
-<img src="{{ asset('images/PORTADAMEFASA1.0.png') }}" alt="logo mefasa"  style="max-width: 500px; max-height: 500px;">
+<img src="{{ asset('images/Logo Mefasa 72dpi.png') }}" alt="logo mefasa">
