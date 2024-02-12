@@ -9,12 +9,27 @@ use App\Http\Controllers\ConsultaController;
 use Illuminate\support\Facades\Mail;
 use App\Mail\PruebaMail;
 
+Route::get('/', [HistorialController::class, 'index'])->name('consultas.index');
+
+
+//Route::middleware(['auth', 'verified'])->group(function () {
+  //  Route::get('/dashboard', function () {
+    //    return view('dashboard');
+    //})->name('dashboard');
 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+    Route::prefix('historial')->group(function () {
+        Route::post('/store', [HistorialController::class, 'store'])->name('historial.store');
+        Route::get('/create', [HistorialController::class, 'create'])->name('historial.create');
+        Route::get('/{id}', [HistorialController::class, 'show'])->name('historial.show');
+        Route::get('/{id}/edit', [HistorialController::class, 'edit'])->name('historial.edit');
+        Route::post('/{id}/update', [HistorialController::class, 'update'])->name('historial.update');
+        Route::delete('/{id}/delete', [HistorialController::class, 'destroy'])->name('historial.destroy');
+    });
 
 Route::get('/procedimientos', [ProcedimientosController::class, 'index'])->name('procedimientos.index');
 Route::get('/procedimientos/create', [ProcedimientosController::class, 'create'])->name('procedimientos.create');
@@ -24,11 +39,8 @@ Route::get('/procedimientos/{id}/edit', [ProcedimientosController::class, 'edit'
 Route::post('/procedimieno/{id}/update', [ProcedimientosController::class, 'update'])->name('procedimientos.update');
 Route::delete('/procedimieno/{id}/delete', [ProcedimientosController::class, 'destroy'])->name('procedimientos.destroy');
 
-
-
-Route::get('/Empleados', function () {
-    return view('Empleados');
-});
+    Route::get('/pruebaemail', [NotificationEmailController::class, 'enviarCorreosPendientes']);
+//});
 
 
 Route::get('/index', [HistorialController::class, 'index'])->name('consultas.index');
