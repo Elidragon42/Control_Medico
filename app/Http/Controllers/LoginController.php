@@ -14,6 +14,10 @@ class LoginController extends Controller
     public function register( Request $request){
         //! Falta validar los datos
 
+        $request->validate([
+
+        ]);
+
         $user = new User();
 
         $user->name = $request->name; 
@@ -27,6 +31,10 @@ class LoginController extends Controller
 
     public function login( Request $request ){ 
         //! Falta validar los datos
+
+        $request->validate([
+
+        ]);
 
         $credenciales = [
             "numero_de_empleado",

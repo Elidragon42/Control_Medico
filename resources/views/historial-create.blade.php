@@ -52,7 +52,7 @@
                         <label for="">Diagnostico</label>
                         <textarea placeholder="Escriba aqui..." class="w-full resize-none overflow-auto" name="diagnostico" id="diagnostico" rows="5"></textarea>
                     </div>
-                    <div>
+                    <div class="pb-2">
                         <label for="estado">estado</label>
                         <select class="rounded-md" name="estado" id="estado" >
                             <option value="pendiente">pendiente</option>
@@ -69,6 +69,15 @@
                     </div>
                     <div>
                         <input class="border-black border bg-white py-2 px-10 cursor-pointer rounded-md" type="submit" value="Crear">
+                    </div>
+                    <div class="col-span-2 col-start-1">
+                        <label for="estado">Procedimiento medico:</label>
+                        <select class="rounded-md w-60 text-center" name="estado" id="estado" >
+                            <option value="">Sin procedimiento</option>
+                            @foreach ($procedimientos as $procedimiento)
+                                <option value="{{$procedimiento->id}}">{{$procedimiento->procedimiento}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
             </form>

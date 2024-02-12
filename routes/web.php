@@ -9,10 +9,13 @@ use App\Http\Controllers\ConsultaController;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\PruebaMail;
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+Route::get('/', [HistorialController::class, 'index'])->name('consultas.index');
+
+
+//Route::middleware(['auth', 'verified'])->group(function () {
+  //  Route::get('/dashboard', function () {
+    //    return view('dashboard');
+    //})->name('dashboard');
 
     Route::prefix('procedimientos')->group(function () {
         Route::get('/', [ProcedimientosController::class, 'index'])->name('procedimientos.index');
@@ -29,7 +32,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 
     Route::prefix('historial')->group(function () {
-        Route::get('/', [HistorialController::class, 'index'])->name('consultas.index');
         Route::post('/store', [HistorialController::class, 'store'])->name('historial.store');
         Route::get('/create', [HistorialController::class, 'create'])->name('historial.create');
         Route::get('/{id}', [HistorialController::class, 'show'])->name('historial.show');
@@ -45,7 +47,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 
     Route::get('/pruebaemail', [NotificationEmailController::class, 'enviarCorreosPendientes']);
-});
+//});
 
 
 require __DIR__.'/auth.php';

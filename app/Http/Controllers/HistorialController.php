@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Consulta;
 use App\Models\Empleado;
+use App\Models\Procedimiento;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -38,7 +39,8 @@ class HistorialController extends Controller
     {
         //
         $empleados = Empleado::all();
-        return view('historial-create', compact('empleados'));
+        $procedimientos = Procedimiento::all();
+        return view('historial-create', compact('empleados', 'procedimientos'));
     }
 
     /**
@@ -67,7 +69,7 @@ class HistorialController extends Controller
     public function show(string $id)
     {
         //
-        $consulta = Consulta::with('user')->find($id);
+        $consulta = Consulta::with('empleado')->find($id);
         return view('historial-show', compact('consulta'));
     }
 
