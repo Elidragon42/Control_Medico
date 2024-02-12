@@ -1,6 +1,4 @@
-@section('css')
-    <link rel="stylesheet" href="{{ asset('css/estilos-index.css') }}">
-@endsection
+
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
