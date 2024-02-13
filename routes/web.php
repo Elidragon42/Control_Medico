@@ -48,7 +48,6 @@ Route::get('/', [HistorialController::class, 'index'])->name('consultas.index');
         Route::delete('/', [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
 
-<<<<<<< HEAD
     Route::get('/pruebaemail', [NotificationEmailController::class, 'enviarCorreosPendientes']);
 //});
 
@@ -69,6 +68,4 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get('/pruebaemail', [NotificationEmailController::class, 'enviarCorreosPendientes']);
-=======
     Route::get('/pruebaemail', [NotificationEmailController::class, 'enviarCorreosPendientes']);
->>>>>>> da101cdafe87c80f999583ddf025c565c8e1a31b
