@@ -46,8 +46,6 @@ Route::delete('/procedimieno/{id}/delete', [ProcedimientosController::class, 'de
 Route::get('/index', [HistorialController::class, 'index'])->name('consultas.index');
 Route::post('/historial/store', [HistorialController::class, 'store'])->name('historial.store');
 Route::get('/historial/create', [HistorialController::class, 'create'])->name('historial.create');
-Route::get('/historial/{id}', [HistorialController::class, 'show'])->name('historial.show');
-Route::get('/historial/{id}/edit', [HistorialController::class, 'edit'])->name('historial.edit');
 Route::post('/historial/{id}/update', [HistorialController::class, 'update'])->name('historial.update');
 Route::delete('/historial/{id}/delete', [HistorialController::class, 'destroy'])->name('historial.destroy');
 
