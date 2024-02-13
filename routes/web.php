@@ -17,6 +17,7 @@ use App\Mail\PruebaMail;
 //    return view('dashboard');
 //})->name('dashboard');
 
+Route::get('/', [HistorialController::class, 'index'])->name('consultas.index');
 
     Route::prefix('procedimientos')->group(function () {
         Route::get('/', [ProcedimientosController::class, 'index'])->name('procedimientos.index');
@@ -33,7 +34,6 @@ use App\Mail\PruebaMail;
     });
 
     Route::prefix('historial')->group(function () {
-        Route::get('/', [HistorialController::class, 'index'])->name('consultas.index');
         Route::post('/store', [HistorialController::class, 'store'])->name('historial.store');
         Route::get('/create', [HistorialController::class, 'create'])->name('historial.create');
         Route::get('/{id}', [HistorialController::class, 'show'])->name('historial.show');
