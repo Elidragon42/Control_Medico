@@ -9,18 +9,29 @@ use App\Http\Controllers\ConsultaController;
 use Illuminate\support\Facades\Mail;
 use App\Mail\PruebaMail;
 
-Route::get('/', [HistorialController::class, 'index'])->name('consultas.index');
+
 
 
 //Route::middleware(['auth', 'verified'])->group(function () {
-  //  Route::get('/dashboard', function () {
-    //    return view('dashboard');
-    //})->name('dashboard');
+//  Route::get('/dashboard', function () {
+//    return view('dashboard');
+//})->name('dashboard');
 
+Route::get('/', [HistorialController::class, 'index'])->name('consultas.index');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    Route::prefix('procedimientos')->group(function () {
+        Route::get('/', [ProcedimientosController::class, 'index'])->name('procedimientos.index');
+        Route::get('/create', [ProcedimientosController::class, 'create'])->name('procedimientos.create');
+        Route::post('/store', [ProcedimientosController::class, 'store'])->name('procedimientos.store');
+        Route::get('/{id}', [ProcedimientosController::class, 'show'])->name('procedimientos.show');
+        Route::get('/{id}/edit', [ProcedimientosController::class, 'edit'])->name('procedimientos.edit');
+        Route::post('/{id}/update', [ProcedimientosController::class, 'update'])->name('procedimientos.update');
+        Route::delete('/{id}/delete', [ProcedimientosController::class, 'destroy'])->name('procedimientos.destroy');
+    });
+
+    Route::get('/Empleados', function () {
+        return view('Empleados');
+    });
 
     Route::prefix('historial')->group(function () {
         Route::post('/store', [HistorialController::class, 'store'])->name('historial.store');
@@ -31,14 +42,13 @@ Route::get('/dashboard', function () {
         Route::delete('/{id}/delete', [HistorialController::class, 'destroy'])->name('historial.destroy');
     });
 
-Route::get('/procedimientos', [ProcedimientosController::class, 'index'])->name('procedimientos.index');
-Route::get('/procedimientos/create', [ProcedimientosController::class, 'create'])->name('procedimientos.create');
-Route::post('/procedimientos/create/store', [ProcedimientosController::class, 'store'])->name('procedimientos.store');
-Route::get('/procedimientos/{id}', [ProcedimientosController::class, 'show'])->name('procedimientos.show');
-Route::get('/procedimientos/{id}/edit', [ProcedimientosController::class, 'edit'])->name('procedimientos.edit');
-Route::post('/procedimieno/{id}/update', [ProcedimientosController::class, 'update'])->name('procedimientos.update');
-Route::delete('/procedimieno/{id}/delete', [ProcedimientosController::class, 'destroy'])->name('procedimientos.destroy');
+    Route::prefix('profile')->group(function () {
+        Route::get('/', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    });
 
+<<<<<<< HEAD
     Route::get('/pruebaemail', [NotificationEmailController::class, 'enviarCorreosPendientes']);
 //});
 
@@ -59,3 +69,6 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get('/pruebaemail', [NotificationEmailController::class, 'enviarCorreosPendientes']);
+=======
+    Route::get('/pruebaemail', [NotificationEmailController::class, 'enviarCorreosPendientes']);
+>>>>>>> da101cdafe87c80f999583ddf025c565c8e1a31b

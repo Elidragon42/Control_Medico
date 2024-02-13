@@ -17,7 +17,7 @@
         <div class="flex h-16 items-center justify-between">
           <div class="flex items-center">
             <div class="flex-shrink-0">
-              <img class="h-8 w-8" src="{{ asset('images/Logo Mefasa 80px.png') }}" alt="logo mefasa">
+              <img class="h-14 w-14" src="{{ asset('images/Logo Mefasa 80px.png') }}" alt="logo mefasa">
             </div>
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
@@ -63,7 +63,7 @@
                 -->
                 <div id="dropdownMenu" class="absolute overflow-hidden hidden right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white  shadow-lg ring-1 ring-black ring-opacity-5 border-2 border-white focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                   
-                  <button class=" w-full px-1 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white" role="menuitem" tabindex="-1" id="user-menu-item-2" onclick="window.ModalSesion.showModal();">Iniciar sesion</button>
+                  <a href="" class="block w-full px-2 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white" role="menuitem" tabindex="-1" id="user-menu-item-2">Iniciar sesion</a>
                 </div>
               </div>
             </div>
