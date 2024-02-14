@@ -15,7 +15,8 @@ Route::prefix("login")->group(function () {
     Route::get("/iniciar_sesion",[LoginController::class, 'iniciar_Sesion'])->name('login.iniciar_sesion');
     Route::get("/registrarse",[LoginController::class, 'registrarse'])->name('login.registrarse');
     Route::post('/registrarse/store',[LoginController::class,'register'])->name('login.store');
-    Route::post('/iniciar_sesion',[LoginController::class,'login'])->name('login.login');
+    Route::post('/iniciar_sesion',[LoginController::class,'login'])->name('login.login'); 
+    Route::get('/cerrar_sesion',[LoginController::class,'logout'])->name('login.cerrar');
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-
+//
 use illuminate\Support\Facades\Hash;
 use illuminate\Support\Facades\Auth;
 
@@ -40,16 +40,15 @@ class LoginController extends Controller
     public function login( Request $request ){ 
         //! Falta validar los datos
 
-        $request->validate([
-
-        ]);
+        
 
         $credenciales = [
-            "numero_de_empleado",
+            "numero_de_empleado" => $request->numero_de_empleado,
+            "password" => $request->password,
         ];
-
-        if(Auth::attempt([$credenciales])){
-            return to_route("procedimientos.index");
+        
+        if(Auth::attempt($credenciales)){
+            return redirect()->route("procedimientos.index");
         }
 
     }
@@ -58,7 +57,9 @@ class LoginController extends Controller
         Auth::logout();
 
         $request->session()->invalidate();
-        $request->session()->regenerateToken();
+
+        return redirect()->route("login.iniciar_sesion");
+        
 
     }
 
