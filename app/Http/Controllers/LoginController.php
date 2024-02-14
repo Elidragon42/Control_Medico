@@ -10,6 +10,10 @@ use illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+
+    public function registrarse(Request $request){
+        return view("auth.register");
+    }
     //
     public function register( Request $request){
         //! Falta validar los datos
@@ -29,6 +33,10 @@ class LoginController extends Controller
 
     }
 
+    public function iniciar_sesion( Request $request ){
+
+        return view("auth.login");
+    }
     public function login( Request $request ){ 
         //! Falta validar los datos
 
