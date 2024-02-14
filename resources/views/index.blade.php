@@ -44,7 +44,7 @@
         <tbody>
             @if ($consultas->isEmpty())
                 <tr>
-                        <td colspan="8" style="text-align: center; background-color: #f2ecec; color: red;">Sin información existente 
+                        <td colspan="8" style="text-align: center; background-color: #f2ecec; color: red;">Sin datos existente 
                     </td>
                 </tr>
             @else

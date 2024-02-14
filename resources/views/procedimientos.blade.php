@@ -29,7 +29,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="3" class="py-2 px-4 border-b text-center">Sin datos.</td>
+                        <td colspan="8" style="text-align: center; background-color: #f2ecec; color: red;">Sin datos existentes 
                     </tr>
                 @endforelse
             </tbody>
