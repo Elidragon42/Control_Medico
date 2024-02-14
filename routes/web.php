@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HistorialController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NotificationEmailController;
 use App\Http\Controllers\ProcedimientosController;
 use App\Http\Controllers\ProfileController;
@@ -10,12 +11,14 @@ use Illuminate\support\Facades\Mail;
 use App\Mail\PruebaMail;
 
 
+Route::prefix("login")->group(function () {
+    Route::get("/iniciar_sesion",[LoginController::class, 'iniciar_Sesion'])->name('login.iniciar_sesion');
+    Route::get("/registrarse",[LoginController::class, 'registrarse'])->name('login.registrarse');
+    Route::post('/registrarse/store',[LoginController::class,'register'])->name('login.store');
+    Route::post('/iniciar_sesion',[LoginController::class,'login'])->name('login.login');
+});
 
-
-//Route::middleware(['auth', 'verified'])->group(function () {
-//  Route::get('/dashboard', function () {
-//    return view('dashboard');
-//})->name('dashboard');
+Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::get('/', [HistorialController::class, 'index'])->name('consultas.index');
 
@@ -49,23 +52,5 @@ Route::get('/', [HistorialController::class, 'index'])->name('consultas.index');
     });
 
     Route::get('/pruebaemail', [NotificationEmailController::class, 'enviarCorreosPendientes']);
-//});
 
-
-Route::get('/index', [HistorialController::class, 'index'])->name('consultas.index');
-Route::post('/historial/store', [HistorialController::class, 'store'])->name('historial.store');
-Route::get('/historial/create', [HistorialController::class, 'create'])->name('historial.create');
-Route::post('/historial/{id}/update', [HistorialController::class, 'update'])->name('historial.update');
-Route::delete('/historial/{id}/delete', [HistorialController::class, 'destroy'])->name('historial.destroy');
-
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-require __DIR__.'/auth.php';
-
-Route::get('/pruebaemail', [NotificationEmailController::class, 'enviarCorreosPendientes']);
-    Route::get('/pruebaemail', [NotificationEmailController::class, 'enviarCorreosPendientes']);
