@@ -6,86 +6,76 @@
     <link rel="stylesheet" href="{{ asset('css/estilos-historial-create.css') }}">
 @endsection
 
-@section('subtitle', 'crear nuevo')
+@section('subtitle', 'Crear nuevo')
 
 @section('boton1')
     <a href="#" class="text-xl font-bold tracking-tight text-gray-900 hover:underline">Ahorita vemos</a>
 @endsection
 
-
 @section('content')
-    <div class="text-center">
-        <div class="mb-10 pb-2 pt-2 border-b-2">
-            <h1 class="text-2xl font-bold tracking-wider">Nuevo registro medico</h1>
+    <div class="max-w-lg mx-auto">
+        <div class="text-center mb-8">
+            <h1 class="text-2xl font-bold tracking-wider">Nuevo registro médico</h1>
         </div>
-        <div>
-            <form action="{{route('historial.store')}}" method="POST">
-                @csrf
-                <input type="hidden" name="medico" value="pancho">
-                <div class="grid grid-cols-4">
-                    <div class="row-span-2">
-                        <div class="wrapper">
-                            <input type="hidden" name="numero_de_empleado">
-                            <div class="select-btn">
-                                <span>Empleado</span>
-                                <i class="fa-solid fa-chevron-down" style="color: #000000;"></i>
-                            </div>
-                            <div class="content">
-                                <div class="search">
-                                    <i class="fa-solid fa-magnifying-glass" style="color: #999;"></i>
-                                    <input type="text" placeholder="Buscar" name="" id="inputSearch">
-                                </div>
-                                <ul class="options">
-                                    @foreach ($empleados as $empleado)
-                                        <li onclick="updateName(this)" id="data-container" data-empleados="{{json_encode($empleados)}}">{{$empleado->numero_de_empleado}}-{{$empleado->name}}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
+        <form action="{{ route('historial.store') }}" method="POST" class="grid grid-cols-2 gap-4">
+            @csrf
+            <div>
+                <label for="numero_empleado" class="block mb-1">Empleado</label>
+                <div class="wrapper">
+                    <input type="hidden" name="numero_de_empleado">
+                    <div class="select-btn">
+                        <span>Seleccionar</span>
+                        <i class="fa-solid fa-chevron-down" style="color: #000000;"></i>
+                    </div>
+                    <div class="content">
+                        <div class="search">
+                            <i class="fa-solid fa-magnifying-glass" style="color: #999;"></i>
+                            <input type="text" placeholder="Buscar" name="" id="inputSearch">
                         </div>
-                        <input type="hidden" value="" name="numero_de_empleado" id="empleadoSeleccionado">
-                    </div>
-                    <div class="col-span-3">
-                        <label for="">Descripcion</label>
-                        <textarea placeholder="Escriba aqui..." class="w-full resize-none overflow-auto" name="descripcion" id="descripcion" rows="5"></textarea>
-                    </div>
-                    <div class="col-start-2 col-span-3 mt-3">
-                        <label for="">Diagnostico</label>
-                        <textarea placeholder="Escriba aqui..." class="w-full resize-none overflow-auto" name="diagnostico" id="diagnostico" rows="5"></textarea>
-                    </div>
-                    <div class="pb-2">
-                        <label for="estado">estado</label>
-                        <select class="rounded-md" name="estado" id="estado" >
-                            <option value="pendiente">pendiente</option>
-                            <option value="realizado">realizado</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="fechaConsulta">Fecha de consulta</label>
-                        <input class="rounded-md" type="date" name="fecha_consulta" id="">
-                    </div>
-                    <div>
-                        <label for="fechaRevision">fecha de revision</label>
-                        <input class="rounded-md" type="date" name="fecha_revision" id="">
-                    </div>
-                    <div>
-                        <input class="border-black border bg-white py-2 px-10 cursor-pointer rounded-md" type="submit" value="Crear">
-                    </div>
-                    <div class="col-span-2 col-start-1">
-                        <label for="estado">Procedimiento medico:</label>
-                        <select class="rounded-md w-60 text-center" name="estado" id="estado" >
-                            <option value="">Sin procedimiento</option>
-                            @foreach ($procedimientos as $procedimiento)
-                                <option value="{{$procedimiento->id}}">{{$procedimiento->procedimiento}}</option>
+                        <ul class="options">
+                            @foreach ($empleados as $empleado)
+                                <li onclick="updateName(this)" id="data-container" data-empleados="{{ json_encode($empleados) }}">{{ $empleado->numero_de_empleado }} - {{ $empleado->name }}</li>
                             @endforeach
-                        </select>
+                        </ul>
                     </div>
                 </div>
-            </form>
-        </div>
-
+                <input type="hidden" value="" name="numero_de_empleado" id="empleadoSeleccionado">
+            </div>
+            <div class="col-span-2">
+                <label for="descripcion" class="block mb-1">Descripción</label>
+                <textarea placeholder="Escriba aquí..." class="w-full resize-none overflow-auto rounded-md" name="descripcion" id="descripcion" rows="5"></textarea>
+            </div>
+            <div>
+                <label for="estado" class="block mb-1">Estado</label>
+                <select class="rounded-md" name="estado" id="estado" >
+                    <option value="pendiente">Pendiente</option>
+                    <option value="realizado">Realizado</option>
+                </select>
+            </div>
+            <div>
+                <label for="fechaConsulta" class="block mb-1">Fecha de consulta</label>
+                <input class="rounded-md" type="date" name="fecha_consulta" id="fechaConsulta">
+            </div>
+            <div>
+                <label for="fechaRevision" class="block mb-1">Fecha de revisión</label>
+                <input class="rounded-md" type="date" name="fecha_revision" id="fechaRevision">
+            </div>
+            <div>
+                <label for="procedimiento" class="block mb-1">Procedimiento médico:</label>
+                <select class="rounded-md w-full text-center" name="procedimiento" id="procedimiento" >
+                    <option value="">Sin procedimiento</option>
+                    @foreach ($procedimientos as $procedimiento)
+                        <option value="{{ $procedimiento->id }}">{{ $procedimiento->procedimiento }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-span-2 text-center">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Crear</button>
+            </div>
+        </form>
     </div>
 @endsection
 
 @section('script')
-    <script src="{{asset('js/Chosen.js')}}"></script>
+    <script src="{{ asset('js/Chosen.js') }}"></script>
 @endsection
