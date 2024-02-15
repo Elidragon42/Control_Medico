@@ -45,6 +45,10 @@
                 <label for="descripcion" class="block mb-1">Descripción</label>
                 <textarea placeholder="Escriba aquí..." class="w-full resize-none overflow-auto rounded-md" name="descripcion" id="descripcion" rows="5"></textarea>
             </div>
+            <div class="col-span-2">
+                <label for="diagnostico" class="block mb-1">Diagnóstico médico</label>
+                <textarea placeholder="Ingrese el diagnóstico médico aquí..." class="w-full resize-none overflow-auto rounded-md" name="diagnostico" id="diagnostico" rows="5"></textarea>
+            </div>
             <div>
                 <label for="estado" class="block mb-1">Estado</label>
                 <select class="rounded-md" name="estado" id="estado" >
