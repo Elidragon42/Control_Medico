@@ -48,7 +48,7 @@ class LoginController extends Controller
         ];
         
         if(Auth::attempt($credenciales)){
-            return redirect()->route("procedimientos.index");
+            return redirect()->route("consultas.index");
         }
 
     }
