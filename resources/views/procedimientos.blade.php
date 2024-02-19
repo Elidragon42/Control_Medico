@@ -11,20 +11,22 @@
 @section('content')
     <div class="max-w-4xl mx-auto">
         <div class="overflow-x-auto">
-            <table class="min-w-full border border-gray-300">
-                <thead>
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-blue-100">
                     <tr>
-                        <th class="py-4 px-6 text-left border-b bg-blue-100">Id</th>
-                        <th class="py-4 px-6 text-left border-b bg-blue-100">Procedimiento</th>
-                        <th class="py-4 px-6 text-left border-b bg-blue-100">Descripción</th>
+                        <th scope="col" class="py-3 px-6 text-left text-xs font-medium text-gray-900 uppercase tracking-wider">Id</th>
+                        <th scope="col" class="py-3 px-6 text-left text-xs font-medium text-gray-900 uppercase tracking-wider">Procedimiento</th>
+                        <th scope="col" class="py-3 px-6 text-left text-xs font-medium text-gray-900 uppercase tracking-wider">Descripción</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="divide-y divide-gray-200">
                     @foreach ($procedimientos as $index => $campo)
                         <tr class="{{ $index % 2 == 0 ? 'bg-gray-100' : 'bg-white' }}">
-                            <td class="py-2 px-4 border-b">{{ $campo->id }}</td>
-                            <td class="py-2 px-4 border-b">{{ $campo->procedimiento }}</td>
-                            <td class="py-2 px-4 border-b">{{ $campo->descripcion ?? 'Sin datos' }}</td>
+                            <td class="py-4 px-6 whitespace-nowrap">
+                                <a href="{{ route('procedimientos.show', $campo->id) }}" class="text-black hover:text-black">{{ $campo->id }}</a>
+                            </td>
+                            <td class="py-4 px-6 whitespace-nowrap">{{ $campo->procedimiento }}</td>
+                            <td class="py-4 px-6 whitespace-nowrap">{{ $campo->descripcion ?? 'Sin datos' }}</td>
                         </tr>
                     @endforeach
                     @if ($procedimientos->isEmpty())
