@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use app\Models\User;
 use Illuminate\Http\Request;
 use illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -11,9 +11,9 @@ class LoginController extends Controller
 {
 
     public function registrarse(Request $request){
-        return view("auth.register");
+     return view("auth.register");
     }
-    //
+    
     public function register( Request $request){
 
         $request->validate([
@@ -23,7 +23,7 @@ class LoginController extends Controller
             'password_confirm' => 'required|min:6|same:password',
             'admin_password' => 'required',
 
-//
+
         ]);
 
         $user = new User();
@@ -31,13 +31,17 @@ class LoginController extends Controller
         $user->name = $request->name; 
         $user->numero_de_empleado = $request->numero_de_empleado;
         $user->password = Hash::make($request->password);
-
-        $user->save();
-
-        Auth::login($user);
-
-        return redirect()->route('login.login');
-
+        
+        if($request->admin_password == Auth::user()->password){
+            $user->save();
+    
+            Auth::login($user);
+    
+            return redirect()->route('login.login');
+        }else{
+            return back()->withErrors(['admin_password' => 'La contraseña del administrador no es correcta.']);
+        }
+            
     }
 
     public function iniciar_sesion( Request $request ){
