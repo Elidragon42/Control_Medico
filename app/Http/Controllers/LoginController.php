@@ -61,6 +61,8 @@ class LoginController extends Controller
         
         if(Auth::attempt($credenciales)){
             return redirect()->route("consultas.index");
+        }else{
+            return redirect()->back()->with('error', 'Numero de empleado o Contraseña incorrecta. Por favor, inténtalo de nuevo.');
         }
 
     }
