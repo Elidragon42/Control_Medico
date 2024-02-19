@@ -38,8 +38,13 @@ class LoginController extends Controller
         return view("auth.login");
     }
     public function login( Request $request ){ 
-        //! Falta validar los datos
+        
 
+        $request->validate([
+            'numero_de_empleado' => 'required|numeric',
+            'password' => 'required'
+
+        ]);
         
 
         $credenciales = [
