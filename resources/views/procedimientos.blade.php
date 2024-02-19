@@ -10,29 +10,30 @@
 
 @section('content')
     <div class="max-w-4xl mx-auto">
-        <table class="min-w-full border border-gray-300">
-            <thead>
-                <tr>
-                    <th class="py-2 px-4 text-left border-b">Id</th>
-                    <th class="py-2 px-4 text-left border-b">Procedimiento</th>
-                    <th class="py-2 px-4 text-left border-b">Descripción</th>
-                </tr>
-            </thead>
-            <tbody>
-                @forelse ($procedimientos as $campo)
+        <div class="overflow-x-auto">
+            <table class="min-w-full border border-gray-300">
+                <thead>
                     <tr>
-                        <td class="py-2 px-4 border-b">
-                            <a href="{{ route('procedimientos.show', $campo->id) }}" class="hover:underline">{{ $campo->id }}</a>
-                        </td>
-                        <td class="py-2 px-4 border-b">{{ $campo->procedimiento }}</td>
-                        <td class="py-2 px-4 border-b">{{ $campo->descripcion ?? 'Sin datos' }}</td>
+                        <th class="py-4 px-6 text-left border-b bg-blue-100">Id</th>
+                        <th class="py-4 px-6 text-left border-b bg-blue-100">Procedimiento</th>
+                        <th class="py-4 px-6 text-left border-b bg-blue-100">Descripción</th>
                     </tr>
-                @empty
-                    <tr>
-                        <td colspan="8" style="text-align: center; background-color: #f2ecec; color: red;">Sin datos existentes 
-                    </tr>
-                @endforelse
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach ($procedimientos as $index => $campo)
+                        <tr class="{{ $index % 2 == 0 ? 'bg-gray-100' : 'bg-white' }}">
+                            <td class="py-2 px-4 border-b">{{ $campo->id }}</td>
+                            <td class="py-2 px-4 border-b">{{ $campo->procedimiento }}</td>
+                            <td class="py-2 px-4 border-b">{{ $campo->descripcion ?? 'Sin datos' }}</td>
+                        </tr>
+                    @endforeach
+                    @if ($procedimientos->isEmpty())
+                        <tr>
+                            <td colspan="3" class="py-4 px-6 text-center text-red-600">Sin datos existentes</td>
+                        </tr>
+                    @endif
+                </tbody>
+            </table>
+        </div>
     </div>
 @endsection
