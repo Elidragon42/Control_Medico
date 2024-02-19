@@ -34,7 +34,7 @@
                 <th class="">No.Empleado</th>
                 <th class="">Descripción</th>
                 <th class="">Médico</th>
-                <th class="">Diagnóstico</th>
+                <th class="">Procedimiento medico</th>
                 <th class="">Fecha de Consulta</th>
                 <th class="">Fecha de Revisión</th>
                 <th class="">Estado</th>
@@ -56,7 +56,7 @@
                         </td>
                         <td class="">{{ $consulta->descripcion }}</td>
                         <td class="">{{ $consulta->medico }}</td>
-                        <td class="">{{ $consulta->diagnostico }}</td>
+                        <td class="">{{ $consulta->procedimiento['procedimiento'] ?? 'Sin procedimiento' }}</td>
                         <td class="">{{ $consulta->fecha_consulta }}</td>
                         <td class="">{{ $consulta->fecha_revision }}</td>
                         <td class="" {{ $consulta->estado == 'Realizado' ? 'text-success' : 'text-danger' }}">
