@@ -8,10 +8,6 @@
 
 @section('subtitle', 'Crear nuevo')
 
-@section('boton1')
-    <a href="#" class="text-xl font-bold tracking-tight text-gray-900 hover:underline">Ahorita vemos</a>
-@endsection
-
 @section('content')
     <div class="max-w-lg mx-auto">
         <div class="text-center mb-8">

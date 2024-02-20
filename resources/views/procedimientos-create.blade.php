@@ -8,10 +8,6 @@
 
 @section('subtitle', 'Añadir nuevo procedimiento')
 
-@section('boton1')
-    <a href="#" class="text-xl font-bold tracking-tight text-gray-900 hover:underline">Ahorita vemos</a>
-@endsection
-
 @section('content')
 <h1 class="text-2xl font-bold tracking-wider text-center mb-10 pb-2 pt-2 border-b-2">Nuevo Procedimiento</h1>
     <form action="{{route('procedimientos.store')}}" method="POST">
