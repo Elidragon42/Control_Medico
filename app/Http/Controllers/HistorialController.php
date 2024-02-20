@@ -14,7 +14,7 @@ class HistorialController extends Controller
 {
     /**
      * Display a listing of the resource.
-     */
+     *///
     public function index(Request $request)
     {
         $filtro = $request->input('filtro', 'todos');
@@ -54,13 +54,24 @@ class HistorialController extends Controller
             'descripcion' => 'required',
             'diagnostico' => 'required',
             'medico' => 'required',
+            'procedimiento' => 'required',
             'estado' => 'required',
             'fecha_consulta' => 'required',
             'fecha_revision' => 'required'
         ]);
 
-        Consulta::create($request->all());
-        return redirect()->route('consultas.index'); 
+        $consulta = new Consulta();
+        $consulta->numero_de_empleado = $request->numero_de_empleado;
+        $consulta->descripcion = $request->descripcion;
+        $consulta->diagnostico = $request->diagnostico;
+        $consulta->medico = $request->medico;
+        $consulta->id_procedimiento = $request->procedimiento; // Asignar el valor de 'procedimiento' a 'id_procedimiento'
+        $consulta->estado = $request->estado;
+        $consulta->fecha_consulta = $request->fecha_consulta;
+        $consulta->fecha_revision = $request->fecha_revision;
+
+        $consulta->save();
+        return redirect()->route('consultas.index');
     }
 
     /**

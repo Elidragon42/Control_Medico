@@ -18,10 +18,10 @@
         <div>
             <h1 class="text-2xl font-bold mb-4">Datos del empleado</h1>
             <table class="min-w-full border-collapse bg-white shadow-md rounded">
-                @if ($consulta->user)
+                @if ($consulta->empleado)
                     <tr class="border-b">
                         <td class="py-2 px-4 text-xl font-semibold">Nombre:</td>
-                        <td class="py-2 px-4">{{ $consulta->user->name }}</td>
+                        <td class="py-2 px-4">{{ $consulta->empleado->name }}</td>
                     </tr>
                     <tr class="border-b">
                         <td class="py-2 px-4 text-xl font-semibold">Numero de empleado:</td>
@@ -29,35 +29,35 @@
                     </tr>
                     <tr class="border-b">
                         <td class="py-2 px-4 text-xl font-semibold">genero:</td>
-                        <td class="py-2 px-4">{{ $consulta->user->genero }}</td>
+                        <td class="py-2 px-4">{{ $consulta->empleado->genero }}</td>
                     </tr>
                     <tr class="border-b">
                         <td class="py-2 px-4 text-xl font-semibold">Fecha de nacimiento:</td>
-                        <td class="py-2 px-4">{{ $consulta->user->fecha_de_nacimiento }}</td>
+                        <td class="py-2 px-4">{{ $consulta->empleado->fecha_de_nacimiento }}</td>
                     </tr>
                     <tr class="border-b">
                         <td class="py-2 px-4 text-xl font-semibold">Numero de seguro social:</td>
-                        <td class="py-2 px-4">{{ $consulta->user->imss }}</td>
+                        <td class="py-2 px-4">{{ $consulta->empleado->imss }}</td>
                     </tr>
                     <tr class="border-b">
                         <td class="py-2 px-4 text-xl font-semibold">Tipo de sangre:</td>
-                        <td class="py-2 px-4">{{ $consulta->user->tipo_de_sangre }}</td>
+                        <td class="py-2 px-4">{{ $consulta->empleado->tipo_de_sangre }}</td>
                     </tr>
                     <tr class="border-b">
                         <td class="py-2 px-4 text-xl font-semibold">Alergias:</td>
-                        <td class="py-2 px-4">{{ $consulta->user->alergias }}</td>
+                        <td class="py-2 px-4">{{ $consulta->empleado->alergias }}</td>
                     </tr>
                     <tr class="border-b">
                         <td class="py-2 px-4 text-xl font-semibold">Telefono:</td>
-                        <td class="py-2 px-4">{{ $consulta->user->telefono }}</td>
+                        <td class="py-2 px-4">{{ $consulta->empleado->telefono }}</td>
                     </tr>
                     <tr class="border-b">
                         <td class="py-2 px-4 text-xl font-semibold">Direccion:</td>
-                        <td class="py-2 px-4">{{ $consulta->user->direccion }}</td>
+                        <td class="py-2 px-4">{{ $consulta->empleado->direccion }}</td>
                     </tr>
                     <tr class="border-b">
                         <td class="py-2 px-4 text-xl font-semibold">email:</td>
-                        <td class="py-2 px-4">{{ $consulta->user->email }}</td>
+                        <td class="py-2 px-4">{{ $consulta->empleado->email }}</td>
                     </tr>
                 @endif
             </table>

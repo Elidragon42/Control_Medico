@@ -56,7 +56,8 @@
                         </td>
                         <td class="">{{ $consulta->descripcion }}</td>
                         <td class="">{{ $consulta->medico }}</td>
-                        <td class="">{{ $consulta->procedimiento['procedimiento'] ?? 'Sin procedimiento' }}</td>
+                        <td class="">{{ optional($consulta->procedimiento)->procedimiento}}</td>
+
                         <td class="">{{ $consulta->fecha_consulta }}</td>
                         <td class="">{{ $consulta->fecha_revision }}</td>
                         <td class="" {{ $consulta->estado == 'Realizado' ? 'text-success' : 'text-danger' }}">
