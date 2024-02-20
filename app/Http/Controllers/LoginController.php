@@ -26,20 +26,20 @@ class LoginController extends Controller
 
         ]);
 
-        $user = new User();
+        
+        if(Hash::check($request->admin_password, Auth::user()->password)){
+            $user = new User();
 
         $user->name = $request->name; 
         $user->numero_de_empleado = $request->numero_de_empleado;
         $user->password = Hash::make($request->password);
-        
-        if($request->admin_password == Auth::user()->password){
             $user->save();
     
-            Auth::login($user);
+            
     
             return redirect()->route('login.login');
         }else{
-            return back()->withErrors(['admin_password' => 'La contraseña del administrador no es correcta.']);
+            return back()->withErrors(['admin_password' => 'La contraseña del administrador no es correcta.' ]);
         }
             
     }

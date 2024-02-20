@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('procedimientos', function (Blueprint $table) {
             $table->id();
-            $table->string('procedimiento')->default('sin procedimiento');
+            $table->string('procedimiento');
             $table->text('descripcion');
             $table->timestamps();
         });

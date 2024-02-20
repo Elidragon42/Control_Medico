@@ -54,7 +54,7 @@ class HistorialController extends Controller
             'descripcion' => 'required',
             'diagnostico' => 'required',
             'medico' => 'required',
-            'procedimiento' => 'required',
+            
             'estado' => 'required',
             'fecha_consulta' => 'required',
             'fecha_revision' => 'required'
