@@ -16,5 +16,7 @@ class Empleado extends Model
         return $this->hasMany(Consulta::class, 'numero_de_empleado', 'numero_de_empleado');
     }
 
+    
+
 
 }

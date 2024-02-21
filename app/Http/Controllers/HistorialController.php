@@ -54,7 +54,6 @@ class HistorialController extends Controller
             'descripcion' => 'required',
             'diagnostico' => 'required',
             'medico' => 'required',
-            
             'estado' => 'required',
             'fecha_consulta' => 'required',
             'fecha_revision' => 'required'
@@ -81,7 +80,8 @@ class HistorialController extends Controller
     {
         //
         $consulta = Consulta::with('empleado')->find($id);
-        return view('historial-show', compact('consulta'));
+        $empleado = Empleado::find($id);
+        return view('historial-show', compact('consulta','empleado'));
     }
 
     /**

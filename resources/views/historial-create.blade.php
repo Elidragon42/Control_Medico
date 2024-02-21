@@ -38,16 +38,25 @@
                     </div>
                 </div>
                 <input type="hidden" value="" name="numero_de_empleado" id="empleadoSeleccionado">
+                @error('numero_de_empleado')
+                    <p class="text-red-600">{{ $message }}</p>
+                @enderror
             </div>
             <div class="col-span-2">
                 <label for="descripcion" class="block mb-1">Descripción</label>
                 <textarea placeholder="Escriba aquí..." class="w-full resize-none overflow-auto rounded-md" name="descripcion"
                     id="descripcion" rows="5"></textarea>
+                @error('descripcion')
+                    <p class="text-red-600">{{ $message }}</p>
+                @enderror
             </div>
             <div class="col-span-2">
                 <label for="diagnostico" class="block mb-1">Diagnóstico médico</label>
                 <textarea placeholder="Ingrese el diagnóstico médico aquí..." class="w-full resize-none overflow-auto rounded-md"
                     name="diagnostico" id="diagnostico" rows="5"></textarea>
+                @error('diagnostico')
+                    <p class="text-red-600">{{ $message }}</p>
+                @enderror
             </div>
             <div>
                 <label for="estado" class="block mb-1">Estado</label>
@@ -55,14 +64,23 @@
                     <option value="pendiente">Pendiente</option>
                     <option value="realizado">Realizado</option>
                 </select>
+                @error('estado')
+                    <p class="text-red-600">{{ $message }}</p>
+                @enderror
             </div>
             <div>
                 <label for="fechaConsulta" class="block mb-1">Fecha de consulta</label>
                 <input class="rounded-md" type="date" name="fecha_consulta" id="fechaConsulta">
+                @error('fecha_consulta')
+                    <p class="text-red-600">{{ $message }}</p>
+                @enderror
             </div>
             <div>
                 <label for="fechaRevision" class="block mb-1">Fecha de revisión</label>
                 <input class="rounded-md" type="date" name="fecha_revision" id="fechaRevision">
+                @error('fecha_revision')
+                    <p class="text-red-600">{{ $message }}</p>
+                @enderror
             </div>
             <div>
                 <label for="procedimiento" class="block mb-1">Procedimiento médico:</label>
@@ -72,14 +90,17 @@
                         <option value="{{ $procedimiento->id }}">{{ $procedimiento->procedimiento }}</option>
                     @endforeach
                 </select>
+                @error('procedimiento')
+                    <p class="text-red-600">{{ $message }}</p>
+                @enderror
             </div>
             <div class="col-span-2 text-center">
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                     type="submit">Crear</button>
             </div>
-            <input type="hidden" name="medico" value="{{Auth::user()->name}}">
+            <input type="hidden" name="medico" value="{{ Auth::user()->name }}">
         </form>
-       
+
     </div>
 @endsection
 
