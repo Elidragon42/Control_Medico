@@ -23,7 +23,7 @@
                     @foreach ($procedimientos as $index => $campo)
                         <tr class="{{ $index % 2 == 0 ? 'bg-gray-100' : 'bg-white' }}">
                             <td class="py-4 px-6 whitespace-nowrap">
-                                <a href="{{ route('procedimientos.show', $campo->id) }}" class="text-black hover:text-black">{{ $campo->id }}</a>
+                                <a href="{{ route('procedimientos.show', $campo->id) }}" class="text-black hover:text-black hover:underline">{{ $campo->id }}</a>
                             </td>
                             <td class="py-4 px-6 whitespace-nowrap">{{ $campo->procedimiento }}</td>
                             <td class="py-4 px-6 whitespace-nowrap">{{ $campo->descripcion ?? 'Sin datos' }}</td>
