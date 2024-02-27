@@ -143,6 +143,21 @@
     <script src="{{ asset('js/DropDownHeader.js') }}"></script>
     <script src="https://kit.fontawesome.com/342c8d4321.js" crossorigin="anonymous"></script>
     @yield('script')
+    <footer class="bg-gray-700 text-white py-4 px-8">
+        <div class="mx-auto max-w-7xl flex justify-between items-center">
+            <div>
+                <p class="font-bold">Información de contacto:</p>
+                <p>Agua Prieta: <a href="tel:6331160250">633-116-0250</a></p>
+                <p>Cumpas: <a href="tel:6343460208">634-346-0208</a></p>
+            </div>
+            <div>
+                <p class="font-bold">Direcciones:</p>
+                <p>Agua Prieta: Calle 7 Avenida Anáhuac Agua Prieta Sonora, México.</p>
+                <p>Cumpas: Calle 15 Avenida Emiliano Zapata Cumpas Sonora, México.</p>
+            </div>
+        </div>
+    </footer>
+    
 </body>
 
 </html>
