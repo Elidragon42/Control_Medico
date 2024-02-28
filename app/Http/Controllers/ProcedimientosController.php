@@ -24,7 +24,12 @@ class ProcedimientosController extends Controller
         $request->validate([
             'procedimiento' => 'required',
             'descripcion' => 'required',
-        ]);
+        ],
+        [
+            'procedimiento.required'=> 'El campo Nombre del procedimiento NO puede estar vacio',
+            'descripcion.required'=> 'El campo Descripcion NO puede estar vacio',
+        ]
+    );
 
         Procedimiento::create($request->all());
         return redirect()->route('procedimientos.index');

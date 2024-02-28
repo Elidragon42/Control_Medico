@@ -57,7 +57,16 @@ class HistorialController extends Controller
             'estado' => 'required',
             'fecha_consulta' => 'required',
             'fecha_revision' => 'required'
-        ]);
+        ],
+        [
+            'numero_de_empleado.required' => 'Debes seleccionar un empleado',
+            'descripcion.required' => 'El campo Descripcion NO puede estar vacia',
+            'diagnostico.required' => 'El campo Diagnostico medico NO puede estar vacio',
+            'estado.required' => 'Debes seleccionar un estado',
+            'fecha_consulta.required' => 'Debes seleccionar la fecha de la consulta',
+            'fecha_revision.required' => 'Debes seleccionar la fecha de la revision'
+        ]
+    );
 
         $consulta = new Consulta();
         $consulta->numero_de_empleado = $request->numero_de_empleado;

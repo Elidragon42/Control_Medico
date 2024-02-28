@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('alergias');
             $table->bigInteger('telefono');
             $table->string('direccion');
-            $table->string('email')->unique();
+            $table->string('email', 191)->unique();
             $table->timestamps();
         });
     }

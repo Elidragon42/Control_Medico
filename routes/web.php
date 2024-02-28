@@ -11,7 +11,7 @@ use Illuminate\support\Facades\Mail;
 use App\Mail\PruebaMail;
 
 
-Route::get("/iniciar_sesion", [LoginController::class, 'iniciar_Sesion'])->name('login.iniciar_sesion');
+Route::get('/iniciar_sesion', [LoginController::class, 'iniciar_Sesion'])->name('login.iniciar_sesion');
 Route::post('/iniciar_sesion', [LoginController::class, 'login'])->name('login.login');
 
 
