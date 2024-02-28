@@ -143,7 +143,7 @@
     <script src="{{ asset('js/DropDownHeader.js') }}"></script>
     <script src="https://kit.fontawesome.com/342c8d4321.js" crossorigin="anonymous"></script>
     @yield('script')
-    <footer class="bg-gray-700 text-white py-4 px-8">
+    <footer class="bg-gray-900 text-white py-4 px-8">
         <div class="mx-auto max-w-7xl flex justify-between items-center">
             <div>
                 <p class="font-bold">Información de contacto:</p>

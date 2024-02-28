@@ -9,7 +9,7 @@ class ProcedimientosController extends Controller
 {
     public function index()
     {
-        $procedimientos = Procedimiento::paginate(10);
+        $procedimientos = Procedimiento::all();
 
         return view('procedimientos', compact('procedimientos'));
     }
