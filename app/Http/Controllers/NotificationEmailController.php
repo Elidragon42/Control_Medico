@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\PruebaMail;
+use App\Mail\PruebaMail;//
 use App\Models\Consulta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
