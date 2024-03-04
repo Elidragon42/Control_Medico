@@ -11,7 +11,7 @@
 @section('content')
 <h1 class="text-2xl font-bold tracking-wider text-center mb-10 pb-2 pt-2 border-b-2">Nuevo Procedimiento</h1>
     <form action="{{route('procedimientos.store')}}" method="POST">
-        @csrf
+        @csrf        
         <div class="grid grid-cols-2">
             <div class="col-span-2 text-center">
                 <label for="procedimiento">Nombre del procedimiento: </label> <br>

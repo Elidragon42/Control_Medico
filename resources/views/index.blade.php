@@ -52,7 +52,7 @@
                     <tr>
                         <td class=""><a href="{{ route('historial.show', $consulta->id) }}"
                                 class="hover:underline">{{ $consulta->id }}</a></td>
-                        <td class=""><a href="#" class="hover:underline">{{ $consulta->numero_de_empleado }}</a>
+                        <td class="">{{ $consulta->numero_de_empleado }}</a>
                         </td>
                         <td class="">{{ $consulta->descripcion }}</td>
                         <td class="">{{ $consulta->medico }}</td>
