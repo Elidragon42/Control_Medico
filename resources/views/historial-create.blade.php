@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/estilos-historial-create.css') }}">
 @endsection
 
-@section('subtitle', 'Crear nuevo')
+@section('subtitle', 'Crear nuevo registro médico')
 
 @section('content')
     <div class="max-w-lg mx-auto">
