@@ -56,7 +56,7 @@
     <div class="container">
         <h1>Recordatorio Importante</h1>
         <p>Estimado Empleado,</p>
-        <p>Te recordamos que el procedimiento programado está a solo 3 días de vencer. Por favor, toma las medidas necesarias para prepararte y coordinar con el equipo.</p>
+        <p>Te recordamos que la cita medica esta proxima a vencer. Por favor, toma las medidas necesarias para prepararte y coordinar con el equipo.</p>
         <p>No dudes en ponerte en contacto si tienes alguna pregunta o necesitas más información.</p>
     </div>
 </body>
