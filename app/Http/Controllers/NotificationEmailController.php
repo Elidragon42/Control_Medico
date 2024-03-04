@@ -28,7 +28,7 @@ class NotificationEmailController extends Controller
             if ($fechaActual->greaterThanOrEqualTo($fechaLimite)) {
                 // La fecha actual está dentro del límite de 3 días antes
 
-                $destinatario = $registro->user->email;
+                $destinatario = $registro->empleado->email;
 
                 // Puedes enviar el correo electrónico aquí
                 Mail::to($destinatario)->send(new PruebaMail());
