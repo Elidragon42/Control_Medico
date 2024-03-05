@@ -49,24 +49,25 @@ class HistorialController extends Controller
     public function store(Request $request): RedirectResponse
     {
         //
-        $request->validate([
-            'numero_de_empleado' => 'required',
-            'descripcion' => 'required',
-            'diagnostico' => 'required',
-            'medico' => 'required',
-            'estado' => 'required',
-            'fecha_consulta' => 'required',
-            'fecha_revision' => 'required'
-        ],
-        [
-            'numero_de_empleado.required' => 'Debes seleccionar un empleado',
-            'descripcion.required' => 'El campo Descripcion NO puede estar vacia',
-            'diagnostico.required' => 'El campo Diagnostico medico NO puede estar vacio',
-            'estado.required' => 'Debes seleccionar un estado',
-            'fecha_consulta.required' => 'Debes seleccionar la fecha de la consulta',
-            'fecha_revision.required' => 'Debes seleccionar la fecha de la revision'
-        ]
-    );
+        $request->validate(
+            [
+                'numero_de_empleado' => 'required',
+                'descripcion' => 'required',
+                'diagnostico' => 'required',
+                'medico' => 'required',
+                'estado' => 'required',
+                'fecha_consulta' => 'required',
+                'fecha_revision' => 'required'
+            ],
+            [
+                'numero_de_empleado.required' => 'Debes seleccionar un empleado',
+                'descripcion.required' => 'El campo Descripcion NO puede estar vacia',
+                'diagnostico.required' => 'El campo Diagnostico medico NO puede estar vacio',
+                'estado.required' => 'Debes seleccionar un estado',
+                'fecha_consulta.required' => 'Debes seleccionar la fecha de la consulta',
+                'fecha_revision.required' => 'Debes seleccionar la fecha de la revision'
+            ]
+        );
 
         $consulta = new Consulta();
         $consulta->numero_de_empleado = $request->numero_de_empleado;
@@ -90,7 +91,7 @@ class HistorialController extends Controller
         //
         $consulta = Consulta::with('empleado')->find($id);
         $empleado = Empleado::find($id);
-        return view('historial-show', compact('consulta','empleado'));
+        return view('historial-show', compact('consulta', 'empleado'));
     }
 
     /**
@@ -103,7 +104,7 @@ class HistorialController extends Controller
         $empleados = Empleado::all();
         $procedimientos = Procedimiento::all();
 
-        return view('historial-edit', compact('consulta', 'empleados' , 'procedimientos'));
+        return view('historial-edit', compact('consulta', 'empleados', 'procedimientos'));
     }
 
     /**
@@ -111,38 +112,39 @@ class HistorialController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $request->validate([
-            'numero_de_empleado' => 'required',
-            'descripcion' => 'required',
-            'diagnostico' => 'required',
-            'medico' => 'required',
-            'estado' => 'required',
-            'fecha_consulta' => 'required',
-            'fecha_revision' => 'required'
-        ],
-        [
-            'numero_de_empleado.required' => 'Error',
-            'descripcion.required' => 'El campo Descripcion NO puede estar vacia',
-            'diagnostico.required' => 'El campo Diagnostico medico NO puede estar vacio',
-            'estado.required' => 'Debes seleccionar un estado',
-            'medico'=> 'Error',
-            'fecha_consulta.required' => 'Debes seleccionar la fecha de la consulta',
-            'fecha_revision.required' => 'Debes seleccionar la fecha de la revision'
-        ]
-    );
+        $request->validate(
+            [
+                'numero_de_empleado' => 'required',
+                'descripcion' => 'required',
+                'diagnostico' => 'required',
+                'medico' => 'required',
+                'estado' => 'required',
+                'fecha_consulta' => 'required',
+                'fecha_revision' => 'required'
+            ],
+            [
+                'numero_de_empleado.required' => 'Error',
+                'descripcion.required' => 'El campo Descripcion NO puede estar vacia',
+                'diagnostico.required' => 'El campo Diagnostico medico NO puede estar vacio',
+                'estado.required' => 'Debes seleccionar un estado',
+                'medico' => 'Error',
+                'fecha_consulta.required' => 'Debes seleccionar la fecha de la consulta',
+                'fecha_revision.required' => 'Debes seleccionar la fecha de la revision'
+            ]
+        );
         //
         $dato = Consulta::findOrFail($id); // Encuentra la consulta existente por su ID
 
-$dato->numero_de_empleado = $request->numero_de_empleado;
-$dato->descripcion = $request->descripcion;
-$dato->diagnostico = $request->diagnostico;
-$dato->medico = $request->medico;
-$dato->id_procedimiento = $request->procedimiento; // Asigna el valor de 'procedimiento' a 'id_procedimiento'
-$dato->estado = $request->estado;
-$dato->fecha_consulta = $request->fecha_consulta;
-$dato->fecha_revision = $request->fecha_revision;
+        $dato->numero_de_empleado = $request->numero_de_empleado;
+        $dato->descripcion = $request->descripcion;
+        $dato->diagnostico = $request->diagnostico;
+        $dato->medico = $request->medico;
+        $dato->id_procedimiento = $request->procedimiento; // Asigna el valor de 'procedimiento' a 'id_procedimiento'
+        $dato->estado = $request->estado;
+        $dato->fecha_consulta = $request->fecha_consulta;
+        $dato->fecha_revision = $request->fecha_revision;
 
-$dato->save(); // Guarda los cambios en el registro existente
+        $dato->save(); // Guarda los cambios en el registro existente
 
         return to_route('consultas.index');
     }
