@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/estilos-index.css') }}">
 @endsection
 
-@section('subtitle', 'index')
+@section('subtitle', 'Registros')
 
 @section('boton1')
     <a href="{{ route('historial.create') }}" class="text-xl font-bold tracking-tight text-gray-900 hover:underline">Nuevo

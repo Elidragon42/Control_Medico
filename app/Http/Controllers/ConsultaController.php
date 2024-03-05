@@ -19,7 +19,7 @@ class ConsultaController extends Controller
             $query->where('estado', 'Pendiente');
         }
         
-        $consultas = $query->paginate(10);
+        $consultas = $query->orderBy('id', 'desc')->paginate(10);
 
         return view('index', compact('consultas'));
     }
