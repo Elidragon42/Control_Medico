@@ -54,6 +54,7 @@
 </head>
 <body>
     <div class="container">
+        <img class="img-fluid" src="{{ asset('images/Logo Mefasa 80px.png') }}" alt="logo mefasa">
         <h1>Recordatorio Importante</h1>
         <p>Estimado Empleado,</p>
         <p>Te recordamos que la cita medica esta proxima a vencer. Por favor, toma las medidas necesarias para prepararte y coordinar con el equipo.</p>
